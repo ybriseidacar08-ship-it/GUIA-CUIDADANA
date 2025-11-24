@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos de Trámites</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0056b3;
+        }
+
+        .video-container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container h2 {
+            color: #0056b3;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .video-description {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Videos Informativos sobre Trámites</h1>
+
+    <div class="video-container">
+        <h2>Trámite de Acta de Nacimiento</h2>
+        <video id="actaNacimiento" controls>
+            <source src="VID-20251105-WA0001.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+        <p class="video-description">
+            Este video explica el proceso para obtener una copia certificada de tu acta de nacimiento.
+            Aprenderás dónde solicitarla, qué documentos necesitas y cuáles son los costos asociados.
+        </p>
+    </div>
+
+    <div class="video-container">
+        <h2>Licencia de Conducir</h2>
+        <video id="licenciaConducir" controls>
+            <source src="LICENCIA.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+        <p class="video-description">
+            En este video, te guiaremos a través de los pasos para obtener o renovar tu licencia de conducir.
+            Conocerás los requisitos, el examen de manejo y los documentos necesarios.
+        </p>
+    </div>
+
+    <div class="video-container">
+        <h2>Pasaporte</h2>
+        <video id="pasaporte" controls>
+            <source src="PASAPORTE.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+        <p class="video-description">
+            Este video te mostrará cómo tramitar tu pasaporte de manera eficiente.
+            Aprenderás sobre las citas, los documentos requeridos y los costos involucrados.
+        </p>
+    </div>
+
+    <div class="video-container">
+        <h2>Pago de Luz</h2>
+        <video id="pagoLuz" controls>
+            <source src="RECIBO.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+        <p class="video-description">
+            Descubre las diferentes formas de pagar tu recibo de luz y cómo evitar cargos por retraso.
+            Te explicaremos los métodos de pago en línea, en ventanilla y por domiciliación bancaria.
+        </p>
+    </div>
+
+    <script>
+        const videos = document.querySelectorAll('video');
+
+        videos.forEach(video => {
+            video.addEventListener('play', function() {
+                pauseOtherVideos(this);
+            });
+        });
+
+        function pauseOtherVideos(currentVideo) {
+            videos.forEach(video => {
+                if (video !== currentVideo) {
+                    video.pause();
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
