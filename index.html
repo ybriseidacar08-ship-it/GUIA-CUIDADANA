@@ -1,63 +1,121 @@
-<!DOCTYPE HTML><!--doc en html-->
+<!DOCTYPE HTML>
+<!--doc en html-->
 <script src="yuri.js"></script>
-<HTML LANG="ES"><!--doc en español-->
+<HTML LANG="ES">
+<!--doc en español-->
+
 <HEAD>
-<meta charset="UFT-8"><!--codifica caracteres-->
-<meta neme="viewport" content="width=device-width, initial-scale=1.0"><!--ajusta el diseño a moviles-->
-<title> GUIA DIGITALN CIUDADANA</title><!--titulo que aparece en la pestaña-->
-<style>
- <body {
-    margin: 0; /*elimina margenes por defecto */
-    font-family:Arial, sans-serif;/*fuente de texto */
-    }
-/*estilo del menu principal */
-nav{
-   background: blue;/*fondo gris oscuro */
-}
-nav ul {
-   list-style: none;/*quita viñetas de la lista */
-   margin: 0;/*elimina margenes */
-   padding: 0; /*elimina relleno */
-   display: flex;/*coloca los <li> en linea (horizontal) */
-}
-nav ul li {
-   position: relative;/*necesario para posicionar el submenu debajo */
-}
-nav ul li a {
-   display: block;/*ase que todo el area sea clickeable */
-   padding: 15px 20px; /*espacio interno */
-   color: white;/*texto blanco */
-   text-decoration: none;/*quita el subrayado */
-}
-nav ul li a:hover{
-   background: #444;/* cambia el fondo al pasar el raton */
-}
+    <meta charset="UTF-8">
+    <!--codifica caracteres-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--ajusta el diseño a moviles-->
+    <title>GUIA DIGITALN CIUDADANA</title>
+    <!--titulo que aparece en la pestaña-->
+    <style>
+        body {
+            margin: 0;
+            /*elimina margenes por defecto */
+            font-family: Arial, sans-serif;
+            /*fuente de texto */
+        }
 
-/* Estilo del submenu */
-nav ul li ul{
-   display: none; /*oculta el submenu por defecto */
-   position: absolute; /*posiciona el submenu relativo al padre */ 
-   top: 100%; /* lo coloca justo debajo del elemento padre */
-   left: 0; /* aliniado a la izquirda */
-   background: red; /*fondo del subtema */
-   padding: 0; /*sin espacio interno */
-   min-width: 180px; /* ancho minimo del subtema */
-}
-nav ul li ul li a {
-   padding: 10px 15px; /*espacio interno en las opciones */
-}
-nav ul li ul li a:hover {
-   background: purple; /*coloca mas claro al pasar el raton */
-}
+        /*estilo del menu principal */
+        nav {
+            background: blue;
+            /fondo gris oscuro/
+        }
 
-/* mostar el submenu */
-nav ul li:hover> ul {
-   display: block; /*cuando paso el raton sobre el <li> , muestra el submenu */
-}
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        nav ul {
+            list-style: none;
+            /*quita viñetas de la lista */
+            margin: 0;
+            /*elimina margenes */
+            padding: 0;
+            /*elimina relleno */
+            display: flex;
+            /*coloca los <li> en linea (horizontal) */
+        }
 
-</style>
-</head>
+        nav ul li {
+            position: relative;
+            /necesario para posicionar el submenu debajo/
+        }
+
+        nav ul li a {
+            display: block;
+            /*ase que todo el area sea clickeable */
+            padding: 15px 20px;
+            /*espacio interno */
+            color: white;
+            /*texto blanco */
+            text-decoration: none;
+            /quita el subrayado/
+        }
+
+        nav ul li a:hover {
+            background: #444;
+            /* cambia el fondo al pasar el raton */
+        }
+
+        /* Estilo del submenu */
+        nav ul li ul {
+            display: none;
+            /*oculta el submenu por defecto */
+            position: absolute;
+            /*posiciona el submenu relativo al padre */
+            top: 100%;
+            /* lo coloca justo debajo del elemento padre */
+            left: 0;
+            /* aliniado a la izquirda */
+            background: red;
+            /*fondo del subtema */
+            padding: 0;
+            /*sin espacio interno */
+            min-width: 180px;
+            /* ancho minimo del subtema */
+        }
+
+        nav ul li ul li a {
+            padding: 10px 15px;
+            /*espacio interno en las opciones */
+        }
+
+        nav ul li ul li a:hover {
+            background: purple;
+            /*coloca mas claro al pasar el raton */
+        }
+
+        /* mostar el submenu */
+        nav ul li:hover>ul {
+            display: block;
+            /*cuando paso el raton sobre el <li> , muestra el submenu */
+        }
+
+        /* --- ANEXAR ESTE CÓDIGO --- */
+        @media (max-width: 600px) {
+
+            body {
+                padding: 10px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.2em;
+                text-align: center;
+            }
+
+            iframe {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</HEAD>
+
 <body>
     <!--menu principal-->
     <nav>
@@ -118,10 +176,10 @@ nav ul li:hover> ul {
                 <!--Flecha indicando subtema-->
                 <ul>
                     <li><a href="GALERIA.HTML">GALERIA</a></li>
-    <!-- Enlace de descarga desde Google Drive -->
-    <a class="btn" href="https://drive.google.com/file/d/1lR3sT_giBDT358pu6KhvJsj5k9bqbw5o/view?usp=drivesdk" targe"_blank">
-      Descargar archivo
-    </a>
+                    <!-- Enlace de descarga desde Google Drive -->
+                    <a class="btn" href="" targe"_blank">
+                        Descargar archivo
+                    </a>
                     <li>
                         <video width="320" height="240" controls>
                             <source src="ciudadano (2).mp4" type="video/mp4">
@@ -142,6 +200,7 @@ nav ul li:hover> ul {
     </aside>
     <center>
         <img src="IMG-20251016-WA0001.jpg" witdth="1340" height="1340">
+    </center>
 </body>
 
 </html>
