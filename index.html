@@ -12,6 +12,7 @@
 
         nav {
             background: blue;
+            width: 100%; /* Ocupa todo el ancho de la pantalla */
         }
 
         nav ul {
@@ -19,15 +20,18 @@
             margin: 0;
             padding: 0;
             display: flex;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+            justify-content: center; /* Centra los elementos horizontalmente */
         }
 
         nav ul li {
             position: relative;
+            width: auto; /* Ancho automático para cada elemento */
         }
 
         nav ul li a {
             display: block;
-            padding: 15px 20px;
+            padding: 10px 15px; /* Reduce el padding para pantallas pequeñas */
             color: white;
             text-decoration: none;
         }
@@ -44,6 +48,7 @@
             background: red;
             padding: 0;
             min-width: 180px;
+            z-index: 1; /* Asegura que el menú desplegable esté encima del contenido */
         }
 
         nav ul li ul li a {
@@ -58,24 +63,68 @@
             display: block;
         }
 
+        main {
+            width: 100%; /* Ocupa todo el ancho de la pantalla */
+            text-align: center; /* Centra el contenido */
+        }
+
+        main img {
+            max-width: 100%; /* Ajusta el ancho de la imagen al 100% de la pantalla */
+            height: auto;
+        }
+
+        /* Estilos para el banner y los botones */
+        .banner {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .banner img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .boton {
+            background-color: #0097A7;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* Media query para pantallas más pequeñas */
         @media (max-width: 600px) {
-            body {
-                padding: 10px;
+            nav ul {
+                flex-direction: column; /* Apila los elementos del menú en pantallas pequeñas */
+                align-items: center; /* Centra los elementos verticalmente */
             }
 
-            main {
-                padding: 10px;
+            nav ul li {
+                width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+                text-align: center; /* Centra el texto en cada elemento */
             }
 
-            h1,
-            h2 {
-                font-size: 1.2em;
-                text-align: center;
+            nav ul li a {
+                padding: 10px; /* Reduce el padding aún más */
             }
 
-            iframe {
-                width: 100%;
-                height: 200px;
+            .botones {
+                flex-direction: column; /* Apila los botones en pantallas pequeñas */
+                align-items: center; /* Centra los botones verticalmente */
+            }
+
+            .boton {
+                margin-bottom: 10px; /* Añade un margen entre los botones */
+                width: 80%; /* Ajusta el ancho de los botones */
             }
         }
     </style>
@@ -154,8 +203,17 @@
         <img src="IMG-20251016-WA0001.jpg" width="1340" height="1340" alt="Imagen principal">
     </main>
 
+    <!-- Sección del banner y los botones -->
+    <div class="banner">
+        <img src="[RUTA_A_LA_IMAGEN_DEL_BANNER]" alt="Tu guía digital ciudadana">
+    </div>
+
+    <div class="botones">
+        <a href="[ENLACE_AL_VIDEO]" class="boton">Ver Video</a>
+        <a href="[ENLACE_AL_DOCUMENTO]" class="boton">Descargar Documento</a>
+    </div>
+
     <script>
-        // Contenido de yuri.js
         alert("BIENVENIDO GUIA CIUDADANA");
     </script>
 </body>
