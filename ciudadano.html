@@ -7,9 +7,27 @@
     <meta name="keywords" content="ciudadano, derechos, responsabilidades">
     <title>GUÍA CIUDADANA</title>
     <link rel="stylesheet" href="estilo.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="">
+    <link rel="preconnect" href="" crossorigin>
+    <link href="/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos para el video responsivo */
+        .video-container {
+            position: relative;
+            width: 100%; /* O el ancho que desees para el contenedor */
+            padding-bottom: 56.25%; /* Proporción 16:9 (ajusta según tu video) */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,21 +42,18 @@
             <li><a href="#mexico">Ciudadanía en México</a></li>
         </ul>
     </nav>
-
     <main class="contenedor">
         <section id="concepto" class="columna">
             <h2>¿Qué es un Ciudadano?</h2>
             <p>Un ciudadano es una persona que tiene la nacionalidad de un país y, por lo tanto, tiene derechos y responsabilidades dentro de ese país. La ciudadanía implica una relación entre el individuo y el Estado, donde el ciudadano tiene ciertos derechos y deberes. Los ciudadanos participan en la vida cívica, política y social de su comunidad.</p>
             <img src="1.png" alt="Imagen de Ciudadano" class="imagen-ciudadano">
         </section>
-
         <section id="derechos" class="columna">
             <h2>Derechos y Responsabilidades de los Ciudadanos</h2>
             <p><b>Derechos:</b> Los ciudadanos tienen derechos como la libertad de expresión, la libertad de reunión, el derecho a votar y el acceso a servicios públicos.</p>
             <p><b>Responsabilidades:</b> Los ciudadanos tienen responsabilidades como cumplir con las leyes, pagar impuestos y participar en la vida cívica de su comunidad.</p>
             <img src="2.jpg" alt="Imagen de Derechos" class="imagen-ciudadano">
         </section>
-
         <section id="participacion" class="columna">
             <h2>Ejemplos de Participación Ciudadana</h2>
             <p>Votar en Elecciones: Los ciudadanos pueden votar para elegir a sus representantes en el gobierno.</p>
@@ -46,7 +61,6 @@
             <p>Servir en la Comunidad: Los ciudadanos pueden servir en la comunidad a través del voluntariado o la participación en organizaciones comunitarias.</p>
             <img src="aa.jpg" alt="Imagen de Participación" class="imagen-ciudadano">
         </section>
-
         <section id="mexico" class="columna">
             <h2>Ciudadanía en México</h2>
             <p>En México, la ciudadanía se otorga a las personas que cumplen con ciertos requisitos establecidos en la Constitución Política de los Estados Unidos Mexicanos.</p>
@@ -54,9 +68,12 @@
             <img src="yuri2.jpg" alt="Imagen de Ciudadanía en México" class="imagen-ciudadano">
         </section>
         <center>
-    <video width="200%" height="100%" controls>
-     <source src="video.mp4" type="video/mp4">
-    </video>
+            <div class="video-container">
+                <video controls>
+                    <source src="video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </center>
     </main>
     <footer>
         <p>© 2025 Guía Ciudadana</p>
