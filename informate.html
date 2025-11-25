@@ -1,82 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="estilos.css">
-    <meta charset="utf-8">
-    <meta name="description" content="Información sobre el ciudadano">
-    <meta name="keywords" content="ciudadano, derechos, responsabilidades">
-    <title>GUÍA CIUDADANA</title>
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="preconnect" href="">
-    <link rel="preconnect" href="" crossorigin>
-    <link href="/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trámites y Pagos - Guía Ciudadana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos para el video responsivo */
-        .video-container {
-            position: relative;
-            width: 100%; /* O el ancho que desees para el contenedor */
-            padding-bottom: 56.25%; /* Proporción 16:9 (ajusta según tu video) */
-            height: 0;
-            overflow: hidden;
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #c8e6c9, #a5d6a7); /* Degradado verde suave */
+            color: #333;
+            line-height: 1.7;
+            overflow-x: hidden; /* Evita la barra de desplazamiento horizontal */
         }
-
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.95); /* Blanco translúcido */
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px); /* Efecto de desenfoque */
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        h1 {
+            font-size: 3.2em;
+            font-weight: 700;
+            color: #2e7d32;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        p.header-description {
+            font-size: 1.4em;
+            color: #558b2f;
+            font-weight: 500;
+        }
+        h2 {
+            font-size: 2.4em;
+            color: #388e3c;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            border-bottom: 5px solid #689f38;
+            padding-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        /* Estilos para trámites y pagos */
+        .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            background-color: #fff;
+        }
+        .item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+        }
+        .item img {
+            width: 40%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 0;
+            transition: transform 0.5s ease;
+        }
+        .item:hover img {
+            transform: scale(1.05);
+        }
+        .item-content {
+            padding: 40px;
+            width: 60%;
+        }
+        .item-content h3 {
+            margin: 0 0 20px;
+            font-size: 2em;
+            color: #1b5e20;
+            font-weight: 600;
+        }
+        .item-content p {
+            margin-bottom: 30px;
+            color: #444;
+            font-size: 1.1em;
+        }
+        .item-content a {
+            display: inline-block;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: background-color 0.4s ease, transform 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .item-content a:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
+        }
+        /* Estilos para información importante */
+        .important-info {
+            background-color: rgba(240, 249, 235, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 60px;
+            border: 2px solid #a5d6a7;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        .important-info h3 {
+            color: #d32f2f;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .important-info p {
+            color: #555;
+            font-size: 1.1em;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1 id="titulo-ciudadano">GUÍA CIUDADANA</h1>
-        <img src="yuri3.jpg" alt="Logo de Ciudadano" class="logo">
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#concepto">Concepto de Ciudadano</a></li>
-            <li><a href="#derechos">Derechos y Responsabilidades</a></li>
-            <li><a href="#participacion">Participación Ciudadana</a></li>
-            <li><a href="#mexico">Ciudadanía en México</a></li>
-        </ul>
-    </nav>
-    <main class="contenedor">
-        <section id="concepto" class="columna">
-            <h2>¿Qué es un Ciudadano?</h2>
-            <p>Un ciudadano es una persona que tiene la nacionalidad de un país y, por lo tanto, tiene derechos y responsabilidades dentro de ese país. La ciudadanía implica una relación entre el individuo y el Estado, donde el ciudadano tiene ciertos derechos y deberes. Los ciudadanos participan en la vida cívica, política y social de su comunidad.</p>
-            <img src="1.png" alt="Imagen de Ciudadano" class="imagen-ciudadano">
-        </section>
-        <section id="derechos" class="columna">
-            <h2>Derechos y Responsabilidades de los Ciudadanos</h2>
-            <p><b>Derechos:</b> Los ciudadanos tienen derechos como la libertad de expresión, la libertad de reunión, el derecho a votar y el acceso a servicios públicos.</p>
-            <p><b>Responsabilidades:</b> Los ciudadanos tienen responsabilidades como cumplir con las leyes, pagar impuestos y participar en la vida cívica de su comunidad.</p>
-            <img src="2.jpg" alt="Imagen de Derechos" class="imagen-ciudadano">
-        </section>
-        <section id="participacion" class="columna">
-            <h2>Ejemplos de Participación Ciudadana</h2>
-            <p>Votar en Elecciones: Los ciudadanos pueden votar para elegir a sus representantes en el gobierno.</p>
-            <p>Participar en Movimientos Sociales: Los ciudadanos pueden participar en movimientos sociales para promover cambios en su comunidad.</p>
-            <p>Servir en la Comunidad: Los ciudadanos pueden servir en la comunidad a través del voluntariado o la participación en organizaciones comunitarias.</p>
-            <img src="aa.jpg" alt="Imagen de Participación" class="imagen-ciudadano">
-        </section>
-        <section id="mexico" class="columna">
-            <h2>Ciudadanía en México</h2>
-            <p>En México, la ciudadanía se otorga a las personas que cumplen con ciertos requisitos establecidos en la Constitución Política de los Estados Unidos Mexicanos.</p>
-            <p>Los ciudadanos pueden contribuir a la sociedad a través del trabajo, la participación en organizaciones comunitarias o la ayuda a otros.</p>
-            <img src="yuri2.jpg" alt="Imagen de Ciudadanía en México" class="imagen-ciudadano">
-        </section>
-        <center>
-            <div class="video-container">
-                <video controls>
-                    <source src="video.mp4" type="video/mp4">
-                </video>
+
+    <div class="container">
+        <header>
+            <h1>Trámites y Pagos</h1>
+            <p class="header-description">Tu portal para una vida ciudadana más fácil y eficiente.</p>
+        </header>
+
+        <h2>Trámites Comunes</h2>
+
+        <div class="item">
+            <img src="LL.JPG" alt="Licencia de Conducir">
+            <div class="item-content">
+                <h3>Licencia de Conducir</h3>
+                <p>Para obtener o renovar una licencia de conducir en Valle de Bravo, el trámite se realiza a través del Gobierno del Estado de México. Los requisitos principales son: acta de nacimiento (o equivalente), CURP actualizada, identificación oficial con fotografía, y comprobante de domicilio con antigüedad no mayor a tres meses. El costo es de $1,500 pesos para la licencia permanente tipo A, y es necesario obtener una línea de captura pagada antes de asistir a la cita. Es recomendable agendar una cita previamente en el sitio web de la Secretaría de Movilidad del Estado de México. </p>
+                <a href="https://www.rastreator.mx">Más información</a>
             </div>
-        </center>
-    </main>
-    <footer>
-        <p>© 2025 Guía Ciudadana</p>
-    </footer>
+        </div>
+
+        <div class="item">
+            <img src="ACTA23.jpg" alt="Acta de Nacimiento">
+            <div class="item-content">
+                <h3>Acta de Nacimiento</h3>
+                <p>Para obtener un acta de nacimiento en Valle de Bravo, puedes tramitar una copia certificada en línea a través del portal oficial del gobierno de México o de forma presencial en la oficina del Registro Civil del Estado de México en Valle de Bravo. La opción en línea requiere la CURP o datos personales para descargar el documento, mientras que la opción presencial puede requerir la solicitud y pago de derechos. El costo es de $81.79 .</p>
+                <a href="https://embamex.sre.gob.mx">Más información</a>
+            </div>
+        </div>
+
+            <div class="item">
+            <img src="recibo.jpg" alt="Acta de Nacimiento">
+            <div class="item-content">
+                <h3>Recibo de luz</h3>
+                <p>Para obtener información de tu recibo de luz en Valle de Bravo, puedes consultar el portal en línea de la CFE o la aplicación móvil "CFE Contigo". También puedes llamar al teléfono nacional de atención de la CFE, que es el 071, o acudir a los centros de atención a clientes más cercanos. </p>
+                <a href="https://www.cfe.gob.mx/hogar/infcliente/Pages/Default.aspx">Más información</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="CURPP.jpg" alt="Acta de Nacimiento">
+            <div class="item-content">
+                <h3>CURP</h3>
+                <p>Para información y trámites de CURP en Valle de Bravo, puedes asistir a las oficinas del Registro Civil más cercanas, ya que es ahí donde se realizan los registros iniciales. También puedes consultar y descargar tu CURP en línea en la página oficial del gobierno o, si necesitas assistance telefónica, llamar al Centro de Atención y Servicios de la CURP. </p>
+                <a href="https://conecta.tec.mx/es/noticias/nacional/emprendedores/que-es-la-curp-descubre-como-se-conforma-y-para-que-sirve">Más información</a>
+            </div>
+        </div>
+        <CENTER>
+         <p>INFORMATE ACERCA DE TODOS LOS TRAMITES QUE NECESITAS EN TU  VIDA DIARIA Y ASEGURATE DE TENERLOS POR SI LOS NECESITAS MAS ADELANTE Y NO TENGAS PROBLEMAS MAS ADELANTE.</p>
+     </CENTER>
 </body>
 </html>
