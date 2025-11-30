@@ -4,132 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantel Valle de Bravo</title>
-    <link rel="stylesheet" href="principal.css">
+    <link rel="stylesheet" href="principal.css"> <!-- Asegúrate de que este archivo exista y sea correcto -->
     <link rel="icon" href="img/unnamed-removebg-preview.png" type="png">
-    <a href="OPDAPAS.html"></a>
     <style>
-        .fondo-valle{
-            background-image: linear-gradient(to top, #0593bb 20%, #0e26ae 80%);
-            background-size: cover;
-            background-position: center center;
-            width: 100%;
-            height: 80vh;
-            background-attachment: fixed;
-        }
-        .contenido-fondo-valle{
-            display: flex;
-            width: 100%;
-            height: 100%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        @keyframes move_wave {
-            0% {
-                transform: translateX(0) translateZ(0) scaleY(1)
-            }
-            50% {
-                transform: translateX(-25%) translateZ(0) scaleY(0.55)
-            }
-            100% {
-                transform: translateX(-50%) translateZ(0) scaleY(1)
-            }
-        }
-        .waveWrapper {
-            overflow: hidden;
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            margin: auto;
-        }
-        .waveWrapperInner {
-            position: absolute;
-            width: 100%;
-            overflow: hidden;
-            height: 70%;
-        }
-        .bgTop {
-            z-index: 15;
-            opacity: 0.5;
-        }
-        .bgMiddle {
-            z-index: 10;
-            opacity: 0.75;
-        }
-        .bgBottom {
-            z-index: 5;
-        }
-        .wave {
-            position: absolute;
-            left: 0;
-            width: 200%;
-            height: 100%;
-            background-repeat: repeat no-repeat;
-            background-position: 0 bottom;
-            transform-origin: center bottom;
-        }
-        .waveTop {
-            background-size: 50% 100px;
-        }
-        .waveAnimation .waveTop {
-          animation: move-wave 3s;
-           -webkit-animation: move-wave 3s;
-           -webkit-animation-delay: 1s;
-           animation-delay: 1s;
-        }
-        .waveMiddle {
-            background-size: 50% 120px;
-        }
-        .waveAnimation .waveMiddle {
-            animation: move_wave 10s linear infinite;
-        }
-        .waveBottom {
-            background-size: 50% 100px;
-        }
-        .waveAnimation .waveBottom {
-            animation: move_wave 15s linear infinite;
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* ANEXAR: Media query para pantallas más pequeñas */
-        @media (max-width: 600px) {
-          body {
-            padding: 10px;
-          }
-          main {
-            padding: 10px;
-          }
-          h1, h2 {
-            font-size: 1.2em;
-            text-align: center;
-          }
-          iframe {
+        .header {
             width: 100%;
-            height: 200px;
-          }
+            overflow: hidden;
+            position: relative;
+        }
+
+        .inner-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px; /* Ajusta según sea necesario */
+            background-color: #0e26ae; /* Un color de fondo para el header */
+            color: white;
+        }
+
+        .logo {
+            text-align: center;
+        }
+
+        .agua {
+            display: block;
+            width: 100%;
+            height: 100px; /* Ajusta según sea necesario */
+        }
+
+        .parallax > use {
+            animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+        }
+        .parallax > use:nth-child(1) {
+            animation-delay: -2s;
+            animation-duration: 7s;
+        }
+        .parallax > use:nth-child(2) {
+            animation-delay: -3s;
+            animation-duration: 10s;
+        }
+        .parallax > use:nth-child(3) {
+            animation-delay: -4s;
+            animation-duration: 13s;
+        }
+        .parallax > use:nth-child(4) {
+            animation-delay: -5s;
+            animation-duration: 20s;
+        }
+        @keyframes move-forever {
+            0% {
+                transform: translate(-90px, 0%);
+            }
+            100% {
+                transform: translate(85px, 0%);
+            }
+        }
+
+        /* Estilos del carrusel */
+        .gallery2 {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .gallery2 h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .content-all {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .content-carrousel {
+            display: flex;
+            width: auto; /* Ancho automático para que se ajuste al contenido */
+            animation: carrousel 15s linear infinite; /* Ajusta la duración según sea necesario */
+        }
+
+        .content-carrousel figure {
+            width: 200px; /* Ancho fijo para cada imagen */
+            margin: 0 10px; /* Espacio entre imágenes */
+        }
+
+        .content-carrousel figure img {
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* Para que las imágenes se ajusten al contenedor sin deformarse */
+        }
+
+        @keyframes carrousel {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%); /* Mueve el carrusel completamente hacia la izquierda */
+            }
+        }
+
+        /* Ajuste para que el carrusel sea suave */
+        .content-carrousel:hover {
+            animation-play-state: paused;
+        }
+
+        .separador {
+            width: 100%;
+            height: 20px;
+            background-color: #f0f0f0; /* Un color de fondo para el separador */
+        }
+
+        /* Media Queries para hacerlo responsivo */
+        @media (max-width: 600px) {
+            .inner-header {
+                height: 80px;
+            }
+
+            .gallery2 {
+                padding: 10px;
+            }
+
+            .content-carrousel figure {
+                width: 150px; /* Reduce el tamaño de las imágenes en pantallas pequeñas */
+                margin: 0 5px;
+            }
+            @keyframes carrousel {
+                0% {
+                    transform: translateX(0%);
+                }
+                100% {
+                    transform: translateX(calc(-100% + 200px)); /* Mueve el carrusel completamente hacia la izquierda */
+                }
+            }
         }
     </style>
-    <script>
-      window.console = window.console || function(t) {};
-    </script>
 </head>
 <body>
     <div class="header">
-        <!--Content before waves-->
-        <div class="inner-header flex">
+        <div class="inner-header">
             <div class="logo">
+                <h1>Plantel Valle de Bravo</h1>
             </div>
         </div>
-        <!--Waves Container-->
         <div>
-            <svg class="agua" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <svg class="agua" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
                 <defs>
                     <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
                 </defs>
                 <g class="parallax">
-                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
                     <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
                     <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
                     <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
@@ -139,23 +170,24 @@
     </div>
 
     <div id="gallery1" class="gallery2">
-        <section >
+        <section>
             <h2>CREA EXPERIENCIAS</h2>
             <div class="content-all">
                 <div class="content-carrousel">
-                    <figure><img src="ejemploprocedimiento.jpg"></figure>
-                    <figure><img src="Pasaporte.png"></figure>
-                    <figure><img src="tramites.jpg"></figure>
-                    <figure><img src="DOCUMENTACION.jpg"></figure>
-                    <figure><img src="DOCUMENTO.jpg" ></figure>
-                    <figure><img src="tramites.jpg"></figure>
-                    <figure><img src="identificacion-mexico.webp"></figure>
-                    <figure><img src="Pasaporte.png"></figure>
-                    <figure><img src="ejemploprocedimiento.jpg"></figure>
+                    <figure><img src="ejemploprocedimiento.jpg" alt="Imagen 1"></figure>
+                    <figure><img src="Pasaporte.png" alt="Imagen 2"></figure>
+                    <figure><img src="tramites.jpg" alt="Imagen 3"></figure>
+                    <figure><img src="DOCUMENTACION.jpg" alt="Imagen 4"></figure>
+                    <figure><img src="DOCUMENTO.jpg" alt="Imagen 5"></figure>
+                    <figure><img src="tramites.jpg" alt="Imagen 6"></figure>
+                    <figure><img src="identificacion-mexico.webp" alt="Imagen 7"></figure>
+                    <figure><img src="Pasaporte.png" alt="Imagen 8"></figure>
+                    <figure><img src="ejemploprocedimiento.jpg" alt="Imagen 9"></figure>
                 </div>
             </div>
         </section>
     </div>
+
     <div class="separador"></div>
 </body>
 </html>
