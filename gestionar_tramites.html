@@ -1,134 +1,176 @@
-<!DOCTYPE HTML><!--doc en html-->
-<HTML LANG="ES"><!--doc en español-->
+<!DOCTYPE HTML>
+<!--doc en html-->
+<HTML LANG="ES">
+<!--doc en español-->
+
 <HEAD>
-<meta charset="UFT-8"><!--codifica caracteres-->
-<meta neme="viewport" content="width=device-width, initial-scale=1.0"><!--ajusta el diseño a moviles-->
-<title> GUIA DIGITALN CIUDADANA</title><!--titulo que aparece en la pestaña-->
-<style>
- <body {
-  nav ul {
-    /* Asegura que el menú ocupe todo el ancho */
-    width: 100%;
+    <meta charset="UTF-8">
+    <!--codifica caracteres-->
+    <!-- MODIFICAR: Añadir viewport meta tag para responsividad -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--ajusta el diseño a moviles-->
+    <title>GUIA DIGITAL CIUDADANA</title>
+    <!--titulo que aparece en la pestaña-->
+    <style>
+        body {
+            margin: 0;
+            /*elimina margenes por defecto */
+            font-family: Arial, sans-serif;
+            /*fuente de texto */
+        }
 
-    /* Permite el desplazamiento horizontal si es necesario */
-    overflow-x: auto;
-    white-space: nowrap;
-}
+        /*estilo del menu principal */
+        nav {
+            background: #0000FF;
+            /fondo gris oscuro/
+        }
 
-nav ul li {
-    /* Evita que los elementos se encojan */
-    flex-shrink: 0;
-}
+        nav ul {
+            list-style: none;
+            /*quita viñetas de la lista */
+            margin: 0;
+            /*elimina margenes */
+            padding: 0;
+            /*elimina relleno */
+            display: flex;
+            /coloca los <li> en linea (horizontal)/
+        }
 
-/* Estilos para dispositivos móviles (opcional) */
-@media (max-width: 600px) {
-    nav ul li a {
-        /* Reducir el padding en pantallas pequeñas */
-        padding: 10px 15px;
-        font-size: 0.9em; /* Reducir el tamaño de la fuente si es necesario */
-    }
-}
-    margin: 0; /*elimina margenes por defecto */
-    font-family:Arial, sans-serif;/*fuente de texto */
-    }
-/*estilo del menu principal */
-nav{
-   background: #0000FF;/*fondo gris oscuro */
-}
-nav ul {
-   list-style: none;/*quita viñetas de la lista */
-   margin: 0;/*elimina margenes */
-   padding: 0; /*elimina relleno */
-   display: flex;/*coloca los <li> en linea (horizontal) */
-}
-nav ul li {
-   position: relative;/*necesario para posicionar el submenu debajo */
-}
-nav ul li a {
-   display: block;/*ase que todo el area sea clickeable */
-   padding: 15px 20px; /*espacio interno */
-   color: white;/*texto blanco */
-   text-decoration: none;/*quita el subrayado */
-}
-nav ul li a:hover{
-   background: #FFC0CB;/* cambia el fondo al pasar el raton */
-}
+        nav ul li {
+            position: relative;
+            /necesario para posicionar el submenu debajo/
+        }
 
-/* Estilo del submenu */
-nav ul li ul{
-   display: none; /*oculta el submenu por defecto */
-   position: absolute; /*posiciona el submenu relativo al padre */ 
-   top: 100%; /* lo coloca justo debajo del elemento padre */
-   left: 0; /* aliniado a la izquirda */
-   background: #444; /*fondo del subtema */
-   padding: 0; /*sin espacio interno */
-   min-width: 180px; /* ancho minimo del subtema */
-}
-nav ul li ul li a {
-   padding: 10px 15px; /*espacio interno en las opciones */
-}
-nav ul li ul li a:hover {
-   background: #FFC0CB; /*coloca mas claro al pasar el raton */
-}
+        nav ul li a {
+            display: block;
+            /*ase que todo el area sea clickeable */
+            padding: 15px 20px;
+            /*espacio interno */
+            color: white;
+            /*texto blanco */
+            text-decoration: none;
+            /quita el subrayado/
+        }
 
-/* mostar el submenu */
-nav ul li:hover> ul {
-   display: block; /*cuando paso el raton sobre el <li> , muestra el submenu */
-}
-</style>
-</head>
+        nav ul li a:hover {
+            background: #FFC0CB;
+            /* cambia el fondo al pasar el raton */
+        }
+
+        /* Estilo del submenu */
+        nav ul li ul {
+            display: none;
+            /*oculta el submenu por defecto */
+            position: absolute;
+            /*posiciona el submenu relativo al padre */
+            top: 100%;
+            /* lo coloca justo debajo del elemento padre */
+            left: 0;
+            /* aliniado a la izquirda */
+            background: #444;
+            /*fondo del subtema */
+            padding: 0;
+            /*sin espacio interno */
+            min-width: 180px;
+            /* ancho minimo del subtema */
+        }
+
+        nav ul li ul li a {
+            padding: 10px 15px;
+            /*espacio interno en las opciones */
+        }
+
+        nav ul li ul li a:hover {
+            background: #FFC0CB;
+            /*coloca mas claro al pasar el raton */
+        }
+
+        /* mostar el submenu */
+        nav ul li:hover>ul {
+            display: block;
+            /*cuando paso el raton sobre el <li> , muestra el submenu */
+        }
+
+        /* ANEXAR: Media query para pantallas más pequeñas */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.2em;
+                text-align: center;
+            }
+
+            iframe {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</HEAD>
+
 <body>
-   <!--menu principal-->
-   <nav>
-      <ul>
-       <!--elemento simple sin subtema-->
-       <form method="get" action="https://www.google.com/search" target="_blank">
-    <input type="search" name="q" placeholder="Introducir búsqueda" autofocus required>
-    <input type="submit">
-  </form>
-
-       
-      
-      <!--Elemento con subtema-->
-      <li>
-         <p><a href=" https://gobmx.page/ActaNacimiento/">ACTA</a></p> <!--Flecha indicando subtema-->
-   
-       <ul>
-      <li><a href="https://www.gob.mx/ActaNacimiento/folioSeguimiento/">BUSCAR POR FOLIO</a></li>
- </ul>
-       <li>
-        <li> <p><a href="https://www.gob.mx/curp/">CURP</a></p><li>  <!--Flecha indicando subtema-->
-
-   <li>
-         <p><a href="https://smovilidad.edomex.gob.mx/licencias">LICENCIA</a></p> 
+    <!--menu principal-->
+    <nav>
         <ul>
-        <li><a href="https://smovilidad.edomex.gob.mx/citas_internet">AGENDAR CITA</a></li>
-        <li><a href="licencia.HTML">TU LICENCIA</a></li>
+            <!--elemento simple sin subtema-->
+            <form method="get" action="" target="_blank">
+                <input type="search" name="q" placeholder="Introducir búsqueda" autofocus required>
+                <input type="submit">
+            </form>
+            <!--Elemento con subtema-->
+            <li>
+                <p><a href=" ">ACTA</a></p>
+                <!--Flecha indicando subtema-->
+                <ul>
+                    <li><a href="">BUSCAR POR FOLIO</a></li>
+                </ul>
+                <li>
+                    <li>
+                        <p><a href="">CURP</a></p>
+                        <li>
+                            <!--Flecha indicando subtema-->
+                <li>
+                    <p><a href="">LICENCIA</a></p>
+                    <ul>
+                        <li><a href="">AGENDAR CITA</a></li>
+                        <li><a href="licencia.HTML">TU LICENCIA</a></li>
+                    </ul>
+                    <li>
+                        <p><a href=" ">SAT</a></p>
+                        <!--Flecha indicando subtema-->
+                        <ul>
+                            <li><a href="">AGENDAR CITA</a></li>
+                            <li><a href="">DECLARACION PERSONAS FISICAS</a></li>
+                            <li><a href="">CONSTANCIA DE SITUACION FISCAL</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                            <p><a href=" ">REGISTRO CIVIL</a></p>
+                            <!--Flecha indicando subtema-->
+                            </li>
+                            <li>
+                                <p><a href=" ">PASAPORTE</a></p>
+                                <!--Flecha indicando subtema-->
+                                <li>
+                                    <p><a href="">PORTAL AYUNTAMIENTO</a></p>
+                                    <!--Flecha indicando subtema-->
+    </nav>
+</body>
 
-       </ul>
-       <li>
-         <p><a href=" https://www.sat.gob.mx/portal/public/home">SAT</a></p> <!--Flecha indicando subtema-->
-         <ul>
-            <li><a href="https://citas.sat.gob.mx/">AGENDAR CITA</a></li>
-        <li><a href="https://www.sat.gob.mx/portal/public/tramites/declaraciones-pf">DECLARACION PERSONAS FISICAS</a></li>
-        <li><a href="https://www.sat.gob.mx/portal/public/tramites/constancia-de-situacion-fiscal">CONSTANCIA DE SITUACION FISCAL</a></li>
-       </ul>
-    </li>
-    <li>
-         <p><a href="https://share.google/bEhPbZOFD9ReqhYrG ">REGISTRO CIVIL</a></p> <!--Flecha indicando subtema-->
-    </li>
-    <li>
-         <p><a href="https://www.gob.mx/pasaporte/ ">PASAPORTE</a></p> <!--Flecha indicando subtema--> 
-    <li>
-         <p><a href="https://share.google/Q5YCviwYntzpR3B4T">PORTAL AYUNTAMIENTO</a></p> <!--Flecha indicando subtema-->
-     </nav>  
-   </body>
-   </html>
-
-   <!DOCTYPE html>
+</html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
+    <!-- MODIFICAR: Añadir viewport meta tag para responsividad -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acta de Nacimiento: Guía Completa y Actualizada</title>
     <style>
@@ -139,24 +181,28 @@ nav ul li:hover> ul {
             background-color: #f9f9f9;
             color: #333;
         }
+
         h1 {
             color: #2e7d32;
             text-align: center;
             margin-bottom: 30px;
         }
+
         h2 {
             color: #2e7d32;
             border-bottom: 2px solid #2e7d32;
             padding-bottom: 5px;
             margin-top: 30px;
         }
+
         .section {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
         }
+
         img {
             max-width: 100%;
             height: auto;
@@ -164,23 +210,28 @@ nav ul li:hover> ul {
             margin: 10px auto;
             border-radius: 5px;
         }
+
         ul {
             list-style-type: disc;
             padding-left: 30px;
         }
+
         .important {
             font-weight: bold;
             color: #d32f2f;
         }
+
         .highlight {
             background-color: #fff8e1;
             padding: 10px;
             border-radius: 5px;
             margin-top: 10px;
         }
+
         .highlight p {
             margin: 0;
         }
+
         .info-box {
             background-color: #e8f5e9;
             padding: 15px;
@@ -188,28 +239,53 @@ nav ul li:hover> ul {
             margin-top: 20px;
             border-radius: 5px;
         }
+
         .info-box p {
             margin: 0;
         }
+
         .faq {
             margin-top: 20px;
         }
+
         .faq h3 {
             color: #1b5e20;
             margin-bottom: 5px;
         }
+
         .faq p {
             margin-bottom: 10px;
         }
+
+        /* ANEXAR: Media query para pantallas más pequeñas */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.2em;
+                text-align: center;
+            }
+
+            iframe {
+                width: 100%;
+                height: 200px;
+            }
+        }
     </style>
 </head>
+
 <body>
-
     <h1>Acta de Nacimiento: Guía Completa y Actualizada</h1>
-
     <div class="section">
         <h2>¿Qué es un Acta de Nacimiento?</h2>
-        <img src="IM34.jpg" alt="Documento Oficial">
+        <img src="IM34.JPG" alt="Documento Oficial">
         <p>Es un documento legal que certifica el nacimiento de una persona. Incluye información crucial como:</p>
         <ul>
             <li>Nombre completo</li>
@@ -220,10 +296,9 @@ nav ul li:hover> ul {
             <li>Datos del Registro Civil donde se realizó el registro</li>
         </ul>
     </div>
-
     <div class="section">
         <h2>¿Por qué es Importante?</h2>
-        <img src="RE.jpg" alt="Importancia Legal">
+        <img src="RE.JPG" alt="Importancia Legal">
         <p>El acta de nacimiento es fundamental para:</p>
         <ul>
             <li>Comprobar tu identidad y nacionalidad ante cualquier autoridad.</li>
@@ -236,26 +311,27 @@ nav ul li:hover> ul {
             <li>Demostrar parentesco en casos de herencias o juicios.</li>
         </ul>
     </div>
-
     <div class="section">
         <h2>Tipos de Acta de Nacimiento</h2>
-        <img src="YU.jpg" alt="Tipos de Acta">
+        <img src="YU.JPG" alt="Tipos de Acta">
         <ul>
             <li><strong>Acta de Nacimiento Original:</strong> Es la primera acta que se expide al registrar el nacimiento.</li>
-            <li><strong>Copia Certificada:</strong> Es una reproducción fiel del acta original, expedida y certificada por el Registro Civil. Tiene validez legal.</li>
-            <li><strong>Acta de Nacimiento en Línea:</strong> En algunos estados, puedes obtener una copia certificada en formato digital.</li>
+            <li><strong>Copia Certificada:</strong> Es una reproducción fiel del acta original, expedida y certificada por el Registro Civil.
+                Tiene validez legal.</li>
+            <li><strong>Acta de Nacimiento en Línea:</strong> En algunos estados, puedes obtener una copia certificada en formato
+                digital.</li>
         </ul>
     </div>
-
     <div class="section">
         <h2>¿Cómo Obtener una Copia Certificada? (Guía Detallada)</h2>
-        <img src="LI.jpg" alt="Obtén Tu Copia">
+        <img src="LI.JPG" alt="Obtén Tu Copia">
         <p>Puedes obtenerla de las siguientes maneras:</p>
         <ul>
             <li><strong>En las Oficinas del Registro Civil:</strong>
                 <ul>
                     <li>Ubica la oficina del Registro Civil donde fue registrado el nacimiento.</li>
-                    <li>Presenta una identificación oficial y los datos de registro (nombre completo, fecha y lugar de nacimiento).</li>
+                    <li>Presenta una identificación oficial y los datos de registro (nombre completo, fecha y lugar de
+                        nacimiento).</li>
                     <li>Paga la tarifa correspondiente.</li>
                     <li>Recibe tu copia certificada.</li>
                 </ul>
@@ -279,10 +355,10 @@ nav ul li:hover> ul {
             </li>
         </ul>
         <div class="highlight">
-            <p><span class="important">¡Importante!</span> Los requisitos y costos pueden variar según el estado. Consulta la información oficial del Registro Civil de tu localidad.</p>
+            <p><span class="important">¡Importante!</span> Los requisitos y costos pueden variar según el estado. Consulta la
+                información oficial del Registro Civil de tu localidad.</p>
         </div>
     </div>
-
     <div class="section">
         <h2>¿Qué Hacer si Hay un Error? (Proceso Paso a Paso)</h2>
         <img src="download.jpg" alt="Corrección de Errores">
@@ -293,7 +369,8 @@ nav ul li:hover> ul {
                 <ul>
                     <li>Acta de nacimiento original (si la tienes).</li>
                     <li>Identificación oficial con fotografía.</li>
-                    <li>Documentos que respalden la corrección (ej. acta de matrimonio de los padres, fe de bautismo, cartilla de vacunación, etc.).</li>
+                    <li>Documentos que respalden la corrección (ej. acta de matrimonio de los padres, fe de bautismo, cartilla de
+                        vacunación, etc.).</li>
                 </ul>
             </li>
             <li><strong>Presenta la solicitud:</strong>
@@ -303,11 +380,12 @@ nav ul li:hover> ul {
                     <li>Llena el formato con la información requerida y adjunta la documentación.</li>
                 </ul>
             </li>
-            <li><strong>Da seguimiento:</strong> Pregunta sobre el tiempo estimado para la resolución y mantente en contacto con el Registro Civil.</li>
-            <li><strong>Recibe la resolución:</strong> Una vez aprobada la corrección, te entregarán un nuevo acta con la información correcta.</li>
+            <li><strong>Da seguimiento:</strong> Pregunta sobre el tiempo estimado para la resolución y mantente en contacto con el
+                Registro Civil.</li>
+            <li><strong>Recibe la resolución:</strong> Una vez aprobada la corrección, te entregarán un nuevo acta con la
+                información correcta.</li>
         </ol>
     </div>
-
     <div class="section">
         <h2>Preguntas Frecuentes (FAQ)</h2>
         <div class="faq">
@@ -316,17 +394,22 @@ nav ul li:hover> ul {
         </div>
         <div class="faq">
             <h3>¿Puedo obtener una copia del acta de nacimiento de otra persona?</h3>
-            <p>En general, solo puedes obtener copias de tu propia acta o de tus hijos menores de edad. En algunos casos, se requiere una autorización legal para obtener el acta de otra persona.</p>
+            <p>En general, solo puedes obtener copias de tu propia acta o de tus hijos menores de edad. En algunos casos, se
+                requiere una autorización legal para obtener el acta de otra persona.</p>
         </div>
         <div class="faq">
             <h3>¿Qué hago si no encuentro mi acta de nacimiento?</h3>
-            <p>Acude al Registro Civil donde crees que fuiste registrado y solicita una búsqueda en sus archivos. Proporciona la mayor cantidad de información posible (nombre completo, fecha y lugar de nacimiento, nombres de los padres).</p>
+            <p>Acude al Registro Civil donde crees que fuiste registrado y solicita una búsqueda en sus archivos. Proporciona la
+                mayor cantidad de información posible (nombre completo, fecha y lugar de nacimiento, nombres de los padres).</p>
         </div>
     </div>
-
     <div class="info-box">
-        <p><strong>¡Recuerda!</strong> Tu acta de nacimiento es un documento valioso. Guárdala en un lugar seguro y obtén copias certificadas solo cuando sea necesario. Mantén una copia digital en un lugar seguro (como un servicio de almacenamiento en la nube) para tener acceso rápido en caso de emergencia.</p>
+        <p><strong>¡Recuerda!</strong> Tu acta de nacimiento es un documento valioso. Guárdala en un lugar seguro y obtén copias
+            certificadas solo cuando sea necesario. Mantén una copia digital en un lugar seguro (como un servicio de
+            almacenamiento en la nube) para tener acceso rápido en caso de emergencia.</p>
     </div>
-
+    <!-- EN EL VIDEO MODIFICAR PARA AJUSTAR CUALDO SE REQUIERA: -->
+    <iframe src="" allow="autoplay; encrypted-media" title="Video desde Google Drive"></iframe>
 </body>
+
 </html>
