@@ -1,179 +1,103 @@
+
 <!DOCTYPE HTML>
-<!--doc en html-->
 <HTML LANG="ES">
-<!--doc en español-->
 
 <HEAD>
     <meta charset="UTF-8">
-    <!--codifica caracteres-->
-    <!-- MODIFICAR: Añadir viewport meta tag para responsividad -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--ajusta el diseño a moviles-->
     <title>GUIA DIGITAL CIUDADANA</title>
-    <!--titulo que aparece en la pestaña-->
     <style>
         body {
             margin: 0;
-            /*elimina margenes por defecto */
             font-family: Arial, sans-serif;
-            /*fuente de texto */
         }
 
-        /*estilo del menu principal */
         nav {
             background: #0000FF;
-            /fondo gris oscuro/
+            width: 100%;
         }
 
         nav ul {
             list-style: none;
-            /*quita viñetas de la lista */
             margin: 0;
-            /*elimina margenes */
             padding: 0;
-            /*elimina relleno */
             display: flex;
-            /coloca los <li> en linea (horizontal)/
+            overflow-x: auto;
+            white-space: nowrap;
+            width: 100%;
         }
 
         nav ul li {
             position: relative;
-            /necesario para posicionar el submenu debajo/
+            flex-shrink: 0;
         }
 
-        nav ul li a {
+        nav ul li a,
+        nav ul li form {
             display: block;
-            /*ase que todo el area sea clickeable */
             padding: 15px 20px;
-            /*espacio interno */
             color: white;
-            /*texto blanco */
             text-decoration: none;
-            /quita el subrayado/
         }
 
         nav ul li a:hover {
             background: #FFC0CB;
-            /* cambia el fondo al pasar el raton */
         }
 
-        /* Estilo del submenu */
         nav ul li ul {
             display: none;
-            /*oculta el submenu por defecto */
             position: absolute;
-            /*posiciona el submenu relativo al padre */
             top: 100%;
-            /* lo coloca justo debajo del elemento padre */
             left: 0;
-            /* aliniado a la izquirda */
             background: #444;
-            /*fondo del subtema */
             padding: 0;
-            /*sin espacio interno */
             min-width: 180px;
-            /* ancho minimo del subtema */
+            z-index: 1;
         }
 
         nav ul li ul li a {
             padding: 10px 15px;
-            /*espacio interno en las opciones */
         }
 
         nav ul li ul li a:hover {
             background: #FFC0CB;
-            /*coloca mas claro al pasar el raton */
         }
 
-        /* mostar el submenu */
         nav ul li:hover>ul {
             display: block;
-            /*cuando paso el raton sobre el <li> , muestra el submenu */
         }
 
-        /* ANEXAR: Media query para pantallas más pequeñas */
+        nav ul li form {
+            padding: 10px;
+        }
+
+        nav ul li form input[type="search"] {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 5px;
+            width: auto;
+        }
+
+        nav ul li form input[type="submit"] {
+            background: #FFC0CB;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
         @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
 
-            main {
-                padding: 10px;
-            }
-
-            h1,
-            h2 {
-                font-size: 1.2em;
-                text-align: center;
-            }
-
-            iframe {
-                width: 100%;
-                height: 200px;
+            nav ul li a,
+            nav ul li form {
+                padding: 10px 15px;
+                font-size: 0.9em;
             }
         }
-    </style>
-</HEAD>
 
-<body>
-    <!--menu principal-->
-    <nav>
-        <ul>
-            <!--elemento simple sin subtema-->
-            <form method="get" action="" target="_blank">
-                <input type="search" name="q" placeholder="Introducir búsqueda" autofocus required>
-                <input type="submit">
-            </form>
-            <!--Elemento con subtema-->
-            <li>
-                <p><a href=" ">ACTA</a></p>
-                <!--Flecha indicando subtema-->
-                <ul>
-                    <li><a href="">BUSCAR POR FOLIO</a></li>
-                </ul>
-                <li>
-                    <li>
-                        <p><a href="">CURP</a></p>
-                        <li>
-                            <!--Flecha indicando subtema-->
-                <li>
-                    <p><a href="">LICENCIA</a></p>
-                    <ul>
-                        <li><a href="">AGENDAR CITA</a></li>
-                        <li><a href="licencia.HTML">TU LICENCIA</a></li>
-                    </ul>
-                    <li>
-                        <p><a href=" ">SAT</a></p>
-                        <!--Flecha indicando subtema-->
-                        <ul>
-                            <li><a href="">AGENDAR CITA</a></li>
-                            <li><a href="">DECLARACION PERSONAS FISICAS</a></li>
-                            <li><a href="">CONSTANCIA DE SITUACION FISCAL</a></li>
-                        </ul>
-                        </li>
-                        <li>
-                            <p><a href=" ">REGISTRO CIVIL</a></p>
-                            <!--Flecha indicando subtema-->
-                            </li>
-                            <li>
-                                <p><a href=" ">PASAPORTE</a></p>
-                                <!--Flecha indicando subtema-->
-                                <li>
-                                    <p><a href="">PORTAL AYUNTAMIENTO</a></p>
-                                    <!--Flecha indicando subtema-->
-    </nav>
-</body>
-
-</html>
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <!-- MODIFICAR: Añadir viewport meta tag para responsividad -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acta de Nacimiento: Guía Completa y Actualizada</title>
-    <style>
+        /* Estilos para el contenido principal (Acta de Nacimiento) */
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
@@ -256,32 +180,43 @@
         .faq p {
             margin-bottom: 10px;
         }
-
-        /* ANEXAR: Media query para pantallas más pequeñas */
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-
-            main {
-                padding: 10px;
-            }
-
-            h1,
-            h2 {
-                font-size: 1.2em;
-                text-align: center;
-            }
-
-            iframe {
-                width: 100%;
-                height: 200px;
-            }
-        }
     </style>
-</head>
+</HEAD>
 
 <body>
+    <nav>
+        <ul>
+            <li>
+                <form method="get" action="" target="_blank">
+                    <input type="search" name="q" placeholder="Introducir búsqueda" autofocus required>
+                    <input type="submit" value="Buscar">
+                </form>
+            </li>
+            <li><a href="#">ACTA</a>
+                <ul>
+                    <li><a href="#">BUSCAR POR FOLIO</a></li>
+                </ul>
+            </li>
+            <li><a href="#">CURP</a></li>
+            <li><a href="#">LICENCIA</a>
+                <ul>
+                    <li><a href="#">AGENDAR CITA</a></li>
+                    <li><a href="licencia.HTML">TU LICENCIA</a></li>
+                </ul>
+            </li>
+            <li><a href="#">SAT</a>
+                <ul>
+                    <li><a href="#">AGENDAR CITA</a></li>
+                    <li><a href="#">DECLARACION PERSONAS FISICAS</a></li>
+                    <li><a href="#">CONSTANCIA DE SITUACION FISCAL</a></li>
+                </ul>
+            </li>
+            <li><a href="#">REGISTRO CIVIL</a></li>
+            <li><a href="#">PASAPORTE</a></li>
+            <li><a href="#">PORTAL AYUNTAMIENTO</a></li>
+        </ul>
+    </nav>
+
     <h1>Acta de Nacimiento: Guía Completa y Actualizada</h1>
     <div class="section">
         <h2>¿Qué es un Acta de Nacimiento?</h2>
@@ -408,8 +343,6 @@
             certificadas solo cuando sea necesario. Mantén una copia digital en un lugar seguro (como un servicio de
             almacenamiento en la nube) para tener acceso rápido en caso de emergencia.</p>
     </div>
-    <!-- EN EL VIDEO MODIFICAR PARA AJUSTAR CUALDO SE REQUIERA: -->
-    <iframe src="" allow="autoplay; encrypted-media" title="Video desde Google Drive"></iframe>
 </body>
 
 </html>
