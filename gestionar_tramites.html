@@ -6,6 +6,28 @@
 <title> GUIA DIGITALN CIUDADANA</title><!--titulo que aparece en la pestaña-->
 <style>
  <body {
+  nav ul {
+    /* Asegura que el menú ocupe todo el ancho */
+    width: 100%;
+
+    /* Permite el desplazamiento horizontal si es necesario */
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+nav ul li {
+    /* Evita que los elementos se encojan */
+    flex-shrink: 0;
+}
+
+/* Estilos para dispositivos móviles (opcional) */
+@media (max-width: 600px) {
+    nav ul li a {
+        /* Reducir el padding en pantallas pequeñas */
+        padding: 10px 15px;
+        font-size: 0.9em; /* Reducir el tamaño de la fuente si es necesario */
+    }
+}
     margin: 0; /*elimina margenes por defecto */
     font-family:Arial, sans-serif;/*fuente de texto */
     }
