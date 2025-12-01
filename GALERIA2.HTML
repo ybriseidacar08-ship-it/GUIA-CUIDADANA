@@ -1,180 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantel Valle de Bravo</title>
-    <link rel="stylesheet" href="principal.css">
-      <link rel="icon" href="img/unnamed-removebg-preview.png" type="png">
-    <a href="OPDAPAS.html"></a>
- 
+    <title>Galería de Trámites</title>
     <style>
-   
-        .fondo-valle{
-            background-image: linear-gradient(to top, #0593bb 20%, #0e26ae 80%);
-            background-size: cover;
-            background-position: center center;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: white;
+            margin: 0;
+        }
+
+        .galeria-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 15px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .galeria-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .galeria-item img {
             width: 100%;
-            height: 80vh;
-            background-attachment: fixed;
-          }
-        .contenido-fondo-valle{
-            display: flex;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Estilo para simular el hexágono */
+        .galeria-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-          }
-      @keyframes move_wave {
-          0% {
-              transform: translateX(0) translateZ(0) scaleY(1)
-          }
-          50% {
-              transform: translateX(-25%) translateZ(0) scaleY(0.55)
-          }
-          100% {
-              transform: translateX(-50%) translateZ(0) scaleY(1)
-          }
-      }
-      .waveWrapper {
-          overflow: hidden;
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          top: 0;
-          margin: auto;
-      }
-      .waveWrapperInner {
-          position: absolute;
-          width: 100%;
-          overflow: hidden;
-          height: 70%;
-    
-          
-      }
-      .bgTop {
-          z-index: 15;
-          opacity: 0.5;
-      }
-      .bgMiddle {
-          z-index: 10;
-          opacity: 0.75;
-      }
-      .bgBottom {
-          z-index: 5;
-      }
-      .wave {
-          position: absolute;
-          left: 0;
-          width: 200%;
-          height: 100%;
-          background-repeat: repeat no-repeat;
-          background-position: 0 bottom;
-          transform-origin: center bottom;
-      }
-      .waveTop {
-          background-size: 50% 100px;
-      }
-      .waveAnimation .waveTop {
-        animation: move-wave 3s;
-         -webkit-animation: move-wave 3s;
-         -webkit-animation-delay: 1s;
-         animation-delay: 1s;
-      }
-      .waveMiddle {
-          background-size: 50% 120px;
-      }
-      .waveAnimation .waveMiddle {
-          animation: move_wave 10s linear infinite;
-      }
-      .waveBottom {
-          background-size: 50% 100px;
-      }
-      .waveAnimation .waveBottom {
-          animation: move_wave 15s linear infinite;
-      }
-      </style>
-      
-      
-        <script>
-        window.console = window.console || function(t) {};
-      </script>
+            background: rgba(0, 0, 0, 0.1); /* Ajusta la transparencia para el efecto deseado */
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            pointer-events: none; /* Permite interactuar con la imagen */
+        }
+    </style>
 </head>
 <body>
-   
-        
-      
-    
-                <h2>TRAMITES CIUDADANOS ADMINISTRATIVOS BASICOS</h2>
-              
-<section class="gal"><br>
-
-    <main id="galeria" class="galeria">
-        <div class="galeria_item">
-            <a href="solicitudecurp.png" data-lightbox="models" data-title="imagen1">
-            <img src="solicitudecurp.png" alt="">
-        </a>
+    <h2>Trámites Ciudadanos Administrativos Básicos</h2>
+    <section class="galeria-container">
+        <div class="galeria-item">
+            <img src="solicitudecurp.png" alt="Solicitud CURP">
         </div>
-
-    <div class="galeria_item">
-        <a href="CURP1.png" data-lightbox="models" data-title="imagen2">
-        <img src="CURP1.jpg" alt="">
-    </a>
-    </div>
-
-    <div class="galeria_item">
-        <a href="expedicion.png" data-lightbox="models" data-title="imagen3">
-        <img src="expedicion.png" alt="">
-    </a>
-    </div>
-
-    <div class="galeria_item">
-        <a href="tramitedepasaporte.png" data-lightbox="models" data-title="imagen4">
-        <img src="tramitedepasaporte.png" alt="">
-    </a>
-    </div>
-
-    <div class="galeria_item">
-         <a href="registro.png" data-lightbox="models" data-title="imagen5">
-        <img src="registro.png" alt="">
-    </a>
-    </div>
-
-    <div class="galeria_item">
-        <a href="licencia.png" data-lightbox="models" data-title="imagen6">
-        <img src="licencia.png" alt="">
-    </a>
-    </div>
-
-    <div class="galeria_item">
-        <a href="inscribe.png" data-lightbox="models" data-title="imagen7">
-        <img src="inscribe.png" alt="">
-    </a>
-    </div>
-
-    <div class="galeria_item">
-        <a href="tramiterfc.png" data-lightbox="models" data-title="imagen8">
-        <img src="tramiterfc.png" alt="">
-    </a>
-    </div>
-
-    <div class="galeria_item">
-        <a href="constancias.png" data-lightbox="models" data-title="imagen9">
-        <img src="constancias.png" alt="">
-    </a>
-    </div>
-
-        <div class="galeria_item">
-            <a href="solicitudactadenacimiento.png" data-lightbox="models" data-title="imagen10">
-            <img src="solicitudactadenacimiento.png" alt="">
-        </a>
+        <div class="galeria-item">
+            <img src="CURP1.png" alt="CURP">
         </div>
-
-</main>
-        </section>
-
-      
+        <div class="galeria-item">
+            <img src="expedicion.png" alt="Expedición">
+        </div>
+        <div class="galeria-item">
+            <img src="tramitedepasaporte.png" alt="Trámite de Pasaporte">
+        </div>
+        <div class="galeria-item">
+            <img src="registro.png" alt="Registro">
+        </div>
+        <div class="galeria-item">
+            <img src="licencia.png" alt="Licencia">
+        </div>
+        <div class="galeria-item">
+            <img src="inscribe.png" alt="Inscribe">
+        </div>
+        <div class="galeria-item">
+            <img src="tramiterfc.png" alt="Trámite RFC">
+        </div>
+        <div class="galeria-item">
+            <img src="constancias.png" alt="Constancias">
+        </div>
+        <div class="galeria-item">
+            <img src="solicitudactadenacimiento.png" alt="Solicitud Acta de Nacimiento">
+        </div>
+        <div class="galeria-item">
+            <img src="CURP1.png" alt="CURP">
+        </div>
+        <div class="galeria-item">
+            <img src="inscribe.png" alt="Inscribe">
+        </div>
+    </section>
 </body>
 </html>
