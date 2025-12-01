@@ -23,36 +23,26 @@ img {
     background-size: cover;
     background-position: center center;
     width: 100%;
-    /* Asegura que el fondo ocupe el 100% del viewport height */
-    min-height: 100vh;
+    min-height: 100vh; /* Asegura que el fondo ocupe el 100% del viewport height */
     background-attachment: fixed;
     position: relative; /* Necesario para posicionar las olas correctamente */
     overflow: hidden; /* Evita que el contenido interno se desborde */
+    display: flex; /* Usamos flexbox para distribuir el contenido */
+    flex-direction: column; /* Alineamos los elementos verticalmente */
 }
 
-.contenido-fondo-valle {
-    display: flex;
-    width: 100%;
-    min-height: 65vh; /* Ajusta la altura del contenido */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Para asegurar que las olas se posicionen correctamente */
-    z-index: 1; /* Asegura que el contenido esté sobre las olas */
-}
-
-/* Waves Styles */
 .header {
-    position: relative;
     text-align: center;
     color: white;
     width: 100%;
-    height: 65vh; /* El header ocupa el 65% del viewport height */
+    height: 65vh;
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /*  evita que las olas se desborden */
+    flex-shrink: 0; /* Evita que el header se encoja */
 }
 
 .inner-header {
@@ -130,6 +120,7 @@ img {
     justify-content: center;
     border-radius: 15px;
     /* background-image: url();  Eliminado porque no hay URL válida */
+    flex-grow: 1; /* Permite que la galería ocupe el espacio restante */
 }
 
 h2 {
