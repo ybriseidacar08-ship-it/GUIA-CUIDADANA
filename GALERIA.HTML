@@ -1,224 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantel Valle de Bravo</title>
-    <link rel="icon" href="img/unnamed-removebg-preview.png" type="png">
-    <style>
-        /* General Styles */
-        body {
-            margin: 0;
-            font-family: sans-serif;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantel Valle de Bravo</title>
+<link rel="stylesheet" href="principal.css">
+<link rel="icon" href="valle.png" type="png">
 
-        /* Header and Wave Styles */
-        .header {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            background: linear-gradient(to top, #0593bb 20%, #0e26ae 80%);
-            text-align: center;
-        }
+<style>
+/* ---------------- Diseño principal ---------------- */
+.fondo-valle{
+    background-image: linear-gradient(to top, #0593bb 20%, #0e26ae 80%);
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 80vh;
+    background-attachment: fixed;
+}
+.contenido-fondo-valle{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.waveWrapper { overflow: hidden; position: absolute; left: 0; right: 0; bottom: 0; top: 0; margin: auto; }
+.waveWrapperInner { position: absolute; width: 100%; overflow: hidden; height: 70%; }
+.bgTop { z-index: 15; opacity: 0.5; }
+.bgMiddle { z-index: 10; opacity: 0.75; }
+.bgBottom { z-index: 5; }
+.wave { position: absolute; left: 0; width: 200%; height: 100%; background-repeat: repeat no-repeat; background-position: 0 bottom; transform-origin: center bottom; }
+.waveTop { background-size: 50% 100px; }
+.waveAnimation .waveTop { animation: move-wave 3s; -webkit-animation: move-wave 3s; -webkit-animation-delay: 1s; animation-delay: 1s; }
+.waveMiddle { background-size: 50% 120px; }
+.waveAnimation .waveMiddle { animation: move_wave 10s linear infinite; }
+.waveBottom { background-size: 50% 100px; }
+.waveAnimation .waveBottom { animation: move_wave 15s linear infinite; }
 
-        .inner-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 15vh;
-            padding: 10px;
-        }
+/* ---------------- Carrusel ---------------- */
+.content-all {
+    width: 100%;
+    max-width: 210px;
+    margin: 50px auto 0 auto;
+    perspective: 800px;
+    position: relative;
+}
 
-        .logo {
-            color: white;
-            font-size: 1.2em;
-        }
+.content-carrousel {
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px; /* espaciado entre imágenes */
+}
 
-        .agua {
-            display: block;
-            width: 100%;
-            height: 70px;
-        }
+.content-carrousel figure {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
 
-        .parallax>use {
-            animation: move-forever 12s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-        }
+.content-carrousel img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
-        .parallax>use:nth-child(1) {
-            animation-delay: -2s;
-            animation-duration: 7s;
-        }
+/* ---------------- Encabezado y ola ---------------- */
+.inner-header { height: 65vh; }
+.agua { height: 17vh; min-height: 100px; }
 
-        .parallax>use:nth-child(2) {
-            animation-delay: -3s;
-            animation-duration: 10s;
-        }
+/* ---------------- Titulos ---------------- */
+h2 {
+    text-align: center;
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 80px;
+    color: aqua;
+    text-shadow: 0px 0px 6px black;
+}
 
-        .parallax>use:nth-child(3) {
-            animation-delay: -4s;
-            animation-duration: 13s;
-        }
+/* ---------------- Ajuste Responsivo ---------------- */
+@media (max-width: 1024px) {
+    .content-all { max-width: 180px; }
+    .content-carrousel figure { max-width: 150px; }
+    h2 { font-size: 36px; margin-top: 50px; }
+    .inner-header { height: 50vh; }
+    .agua { height: 12vh; min-height: 60px; }
+}
 
-        .parallax>use:nth-child(4) {
-            animation-delay: -5s;
-            animation-duration: 20s;
-        }
+@media (max-width: 768px) {
+    .content-all { max-width: 140px; }
+    .content-carrousel figure { max-width: 120px; }
+    h2 { font-size: 32px; margin-top: 40px; }
+    .inner-header { height: 45vh; }
+    .agua { height: 10vh; min-height: 50px; }
+}
 
-        @keyframes move-forever {
-            0% {
-                transform: translate(-90px, 0%);
-            }
+@media (max-width: 480px) {
+    .content-all { max-width: 120px; }
+    .content-carrousel figure { max-width: 100px; }
+    h2 { font-size: 28px; margin-top: 30px; }
+    .inner-header { height: 35vh; }
+    .agua { height: 8vh; min-height: 40px; }
+}
+</style>
 
-            100% {
-                transform: translate(85px, 0%);
-            }
-        }
-
-        /* Gallery Styles */
-        #gallery1 {
-            padding: 20px;
-        }
-
-        #gallery1 h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-        }
-
-        .content-all {
-            overflow: hidden;
-            width: 100%;
-            position: relative; /* Required for absolute positioning of images */
-        }
-
-        .content-carrousel {
-            display: flex;
-            width: 100%; /* Images will wrap within the container */
-            animation: rotateCarousel 20s linear infinite; /* Rotate the carousel */
-            transform-style: preserve-3d; /* Enable 3D transforms */
-        }
-
-        .content-carrousel:hover {
-            animation-play-state: paused;
-        }
-
-        .content-carrousel figure {
-            width: 30%; /* Adjust as needed for spacing */
-            margin: 1%; /* Adjust as needed for spacing */
-            box-sizing: border-box;
-            backface-visibility: hidden; /* Hide back faces */
-        }
-
-        .content-carrousel figure img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        @keyframes rotateCarousel {
-            0% {
-                transform: rotateY(0deg);
-            }
-
-            100% {
-                transform: rotateY(360deg); /* Rotate 360 degrees for a full loop */
-            }
-        }
-
-        /* Separator */
-        .separador {
-            padding: 20px;
-        }
-
-        /* Media Queries for Responsive Design */
-        @media (max-width: 768px) {
-            .inner-header {
-                height: 12vh;
-            }
-
-            .logo {
-                font-size: 1em;
-            }
-
-            #gallery1 h2 {
-                font-size: 1.3em;
-            }
-
-            .content-carrousel figure {
-                width: 45%; /* Smaller screens can fit fewer images */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .inner-header {
-                height: 10vh;
-            }
-
-            .logo {
-                font-size: 0.9em;
-            }
-
-            #gallery1 h2 {
-                font-size: 1.1em;
-            }
-
-            .content-carrousel figure {
-                width: 90%; /* Stack images one by one on phones */
-                margin: 2%;
-            }
-        }
-    </style>
-    <script>
-        window.console = window.console || function (t) {};
-    </script>
 </head>
-
 <body>
-    <div class="header">
-        <div class="inner-header flex">
-            <div class="logo">
-                Plantel Valle de Bravo
+
+<div class="header">
+    <div class="inner-header flex">
+        <div class="logo"></div>
+    </div>
+    <div>
+        <svg class="agua" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+        </svg>
+    </div>
+</div>
+
+<div id="gallery1" class="gallery2">
+    <section>
+        <h2>Datos personales</h2>
+        <div class="content-all">
+            <div class="content-carrousel">
+               <figure><img src="ejemploprocedimiento.jpg"></figure>
+                        <figure><img src="Pasaporte.png"></figure>
+                        <figure><img src="tramites.jpg"></figure>
+                        <figure><img src="DOCUMENTACION.jpg"></figure>
+                        <figure><img src="DOCUMENTO.jpg" ></figure>
+                        <figure><img src="tramites.jpg"></figure>
+                        <figure><img src="identificacion-mexico.webp"></figure>
+                        <figure><img src="Pasaporte.png"></figure>
+                        <figure><img src="ejemploprocedimiento.jpg"></figure>
             </div>
         </div>
-        <div>
-            <svg class="agua" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                <defs>
-                    <path id="gentle-wave"
-                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                </defs>
-                <g class="parallax">
-                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-                </g>
-            </svg>
-        </div>
-    </div>
+    </section>
+</div>
 
-    <div id="gallery1" class="gallery2">
-        <section>
-            <h2>CREA EXPERIENCIAS</h2>
-            <div class="content-all">
-                <div class="content-carrousel">
-                    <figure><img src="ejemploprocedimiento.jpg" alt="Image 1"></figure>
-                    <figure><img src="Pasaporte.png" alt="Image 2"></figure>
-                    <figure><img src="tramites.jpg" alt="Image 3"></figure>
-                    <figure><img src="DOCUMENTACION.jpg" alt="Image 4"></figure>
-                    <figure><img src="DOCUMENTO.jpg" alt="Image 5"></figure>
-                    <figure><img src="tramites.jpg" alt="Image 6"></figure>
-                    <figure><img src="identificacion-mexico.webp" alt="Image 7"></figure>
-                    <figure><img src="Pasaporte.png" alt="Image 8"></figure>
-                    <figure><img src="ejemploprocedimiento.jpg" alt="Image 9"></figure>
-                </div>
-            </div>
-        </section>
-    </div>
+<div class="separador"></div>
 
-    <div class="separador"></div>
 </body>
-
 </html>
