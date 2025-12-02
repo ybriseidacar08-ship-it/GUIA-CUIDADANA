@@ -5,16 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantel Valle de Bravo</title>
-    <link rel="stylesheet" href="principal.css">
     <link rel="icon" href="img/unnamed-removebg-preview.png" type="png">
     <style>
         /* General Styles */
         body {
             margin: 0;
             font-family: sans-serif;
-            /* Choose a suitable font */
             overflow-x: hidden;
-            /* Prevent horizontal scroll */
         }
 
         /* Header and Wave Styles */
@@ -24,7 +21,6 @@
             overflow: hidden;
             background: linear-gradient(to top, #0593bb 20%, #0e26ae 80%);
             text-align: center;
-            /* Center header content */
         }
 
         .inner-header {
@@ -32,22 +28,18 @@
             align-items: center;
             justify-content: center;
             height: 15vh;
-            /* Adjust as needed */
             padding: 10px;
-            /* Add some padding */
         }
 
         .logo {
             color: white;
             font-size: 1.2em;
-            /* Adjust font size */
         }
 
         .agua {
             display: block;
             width: 100%;
             height: 70px;
-            /* Adjust wave height */
         }
 
         .parallax>use {
@@ -93,7 +85,6 @@
             text-align: center;
             margin-bottom: 20px;
             font-size: 1.5em;
-            /* Adjust font size */
         }
 
         .content-all {
@@ -103,10 +94,8 @@
 
         .content-carrousel {
             display: flex;
-            width: auto;
-            /* Adjust based on number of images */
+            width: auto; /* IMPORTANT: Let content determine width */
             animation: slideshow 20s linear infinite;
-            /* Adjust speed */
         }
 
         .content-carrousel:hover {
@@ -115,10 +104,7 @@
 
         .content-carrousel figure {
             width: 50%;
-            /* Adjust image width */
             margin: 5px;
-            /* Add some spacing */
-            padding: 0;
             box-sizing: border-box;
         }
 
@@ -134,8 +120,7 @@
             }
 
             100% {
-                transform: translateX(-100%);
-                /* Move all images out of view */
+                transform: translateX(-100%); /* IMPORTANT: Move entire content */
             }
         }
 
@@ -148,49 +133,36 @@
         @media (max-width: 768px) {
             .inner-header {
                 height: 12vh;
-                /* Adjust header height */
             }
 
             .logo {
                 font-size: 1em;
-                /* Smaller font size */
             }
 
             #gallery1 h2 {
                 font-size: 1.3em;
-                /* Smaller font size */
             }
 
             .content-carrousel figure {
                 width: 50%;
-                /* Stack two images */
             }
         }
 
         @media (max-width: 480px) {
             .inner-header {
                 height: 10vh;
-                /* Further reduce header height */
             }
 
             .logo {
                 font-size: 0.9em;
-                /* Even smaller font size */
             }
 
             #gallery1 h2 {
                 font-size: 1.1em;
-                /* Even smaller font size */
             }
 
             .content-carrousel figure {
                 width: 100%;
-                /* Stack images one by one */
-            }
-
-            .agua {
-                height: 50px;
-                /* Further reduce wave height */
             }
         }
     </style>
@@ -201,13 +173,11 @@
 
 <body>
     <div class="header">
-        <!--Content before waves-->
         <div class="inner-header flex">
             <div class="logo">
                 Plantel Valle de Bravo
             </div>
         </div>
-        <!--Waves Container-->
         <div>
             <svg class="agua" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
