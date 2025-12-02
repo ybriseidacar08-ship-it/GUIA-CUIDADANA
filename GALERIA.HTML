@@ -1,158 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plantel Valle de Bravo</title>
-<link rel="stylesheet" href="principal.css">
-<link rel="icon" href="valle.png" type="png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantel Valle de Bravo</title>
+    <link rel="stylesheet" href="principal.css">
+    <link rel="icon" href="img/unnamed-removebg-preview.png" type="png">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: sans-serif; /* Choose a suitable font */
+        }
 
-<style>
-/* ---------------- Diseño principal ---------------- */
-.fondo-valle{
-    background-image: linear-gradient(to top, #0593bb 20%, #0e26ae 80%);
-    background-size: cover;
-    background-position: center center;
-    width: 100%;
-    height: 80vh;
-    background-attachment: fixed;
-}
-.contenido-fondo-valle{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.waveWrapper { overflow: hidden; position: absolute; left: 0; right: 0; bottom: 0; top: 0; margin: auto; }
-.waveWrapperInner { position: absolute; width: 100%; overflow: hidden; height: 70%; }
-.bgTop { z-index: 15; opacity: 0.5; }
-.bgMiddle { z-index: 10; opacity: 0.75; }
-.bgBottom { z-index: 5; }
-.wave { position: absolute; left: 0; width: 200%; height: 100%; background-repeat: repeat no-repeat; background-position: 0 bottom; transform-origin: center bottom; }
-.waveTop { background-size: 50% 100px; }
-.waveAnimation .waveTop { animation: move-wave 3s; -webkit-animation: move-wave 3s; -webkit-animation-delay: 1s; animation-delay: 1s; }
-.waveMiddle { background-size: 50% 120px; }
-.waveAnimation .waveMiddle { animation: move_wave 10s linear infinite; }
-.waveBottom { background-size: 50% 100px; }
-.waveAnimation .waveBottom { animation: move_wave 15s linear infinite; }
+        /* Header and Wave Styles */
+        .header {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(to top, #0593bb 20%, #0e26ae 80%);
+        }
 
-/* ---------------- Carrusel ---------------- */
-.content-all {
-    width: 100%;
-    max-width: 210px;
-    margin: 50px auto 0 auto;
-    perspective: 800px;
-    position: relative;
-}
+        .inner-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 20vh; /* Adjust as needed */
+        }
 
-.content-carrousel {
-    width: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    display: flex;
-    justify-content: flex-start;
-    gap: 15px; /* espaciado entre imágenes */
-}
+        .logo {
+            /* Style your logo here */
+            color: white;
+            font-size: 1.5em;
+        }
 
-.content-carrousel figure {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    margin: 0;
-    padding: 0;
-}
+        .agua {
+            display: block;
+            width: 100%;
+            height: 100px; /* Adjust wave height */
+        }
 
-.content-carrousel img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+        .parallax > use {
+            animation: move-forever 12s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+        }
 
-/* ---------------- Encabezado y ola ---------------- */
-.inner-header { height: 65vh; }
-.agua { height: 17vh; min-height: 100px; }
+        .parallax > use:nth-child(1) {
+            animation-delay: -2s;
+            animation-duration: 7s;
+        }
 
-/* ---------------- Titulos ---------------- */
-h2 {
-    text-align: center;
-    font-size: 50px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-top: 80px;
-    color: aqua;
-    text-shadow: 0px 0px 6px black;
-}
+        .parallax > use:nth-child(2) {
+            animation-delay: -3s;
+            animation-duration: 10s;
+        }
 
-/* ---------------- Ajuste Responsivo ---------------- */
-@media (max-width: 1024px) {
-    .content-all { max-width: 180px; }
-    .content-carrousel figure { max-width: 150px; }
-    h2 { font-size: 36px; margin-top: 50px; }
-    .inner-header { height: 50vh; }
-    .agua { height: 12vh; min-height: 60px; }
-}
+        .parallax > use:nth-child(3) {
+            animation-delay: -4s;
+            animation-duration: 13s;
+        }
 
-@media (max-width: 768px) {
-    .content-all { max-width: 140px; }
-    .content-carrousel figure { max-width: 120px; }
-    h2 { font-size: 32px; margin-top: 40px; }
-    .inner-header { height: 45vh; }
-    .agua { height: 10vh; min-height: 50px; }
-}
+        .parallax > use:nth-child(4) {
+            animation-delay: -5s;
+            animation-duration: 20s;
+        }
 
-@media (max-width: 480px) {
-    .content-all { max-width: 120px; }
-    .content-carrousel figure { max-width: 100px; }
-    h2 { font-size: 28px; margin-top: 30px; }
-    .inner-header { height: 35vh; }
-    .agua { height: 8vh; min-height: 40px; }
-}
-</style>
+        @keyframes move-forever {
+            0% {
+                transform: translate(-90px, 0%);
+            }
+            100% {
+                transform: translate(85px, 0%);
+            }
+        }
 
+        /* Gallery Styles */
+        #gallery1 {
+            padding: 20px;
+        }
+
+        #gallery1 h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .content-all {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .content-carrousel {
+            display: flex;
+            width: auto; /* Adjust based on number of images */
+            animation: slideshow 20s linear infinite; /* Adjust speed */
+        }
+
+        .content-carrousel:hover {
+            animation-play-state: paused;
+        }
+
+        .content-carrousel figure {
+            width: 300px; /* Adjust image width */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .content-carrousel figure img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        @keyframes slideshow {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%); /* Move all images out of view */
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .inner-header {
+                height: 15vh;
+            }
+
+            #gallery1 figure {
+                width: 200px; /* Smaller images on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .inner-header {
+                height: 10vh;
+            }
+
+            #gallery1 figure {
+                width: 150px; /* Even smaller images on phones */
+            }
+        }
+
+        /* Wave styles (adjust for mobile) */
+        .waveWrapper {
+            position: relative;
+            width: 100%;
+            height: 100px; /* Reduced height for mobile */
+            overflow: hidden;
+        }
+
+        .waveWrapperInner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .wave {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background-repeat: repeat no-repeat;
+            background-position: 0 bottom;
+            transform-origin: center bottom;
+        }
+
+        /* Adjust wave animations */
+        .waveTop {
+            background-size: 50% 50px; /* Smaller wave */
+        }
+
+        .waveMiddle {
+            background-size: 50% 60px; /* Smaller wave */
+        }
+
+        .waveBottom {
+            background-size: 50% 50px; /* Smaller wave */
+        }
+
+        /* Separator */
+        .separador {
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-
-<div class="header">
-    <div class="inner-header flex">
-        <div class="logo"></div>
-    </div>
-    <div>
-        <svg class="agua" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-            <defs>
-                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-            </defs>
-            <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-            </g>
-        </svg>
-    </div>
-</div>
-
-<div id="gallery1" class="gallery2">
-    <section>
-        <h2>Datos personales</h2>
-        <div class="content-all">
-            <div class="content-carrousel">
-                <figure><img src="ine.jpg"></figure>
-                <figure><img src="CURP1.jpg"></figure>
-                <figure><img src="ACTADENACIMIENTO.jpg"></figure>
-                <figure><img src="CURP1.jpg"></figure>
-                <figure><img src="ine.jpg" ></figure>
-                <figure><img src="ine2.jpg"></figure>
-                <figure><img src="ACTADENACIMIENTO.jpg"></figure>
-                <figure><img src="RESIVO.jpg"></figure>
-                <figure><img src="RESIVO1.jpg"></figure>
+    <div class="header">
+        <div class="inner-header flex">
+            <div class="logo">
+                <!-- Your Logo Content -->
+                Plantel Valle de Bravo
             </div>
         </div>
-    </section>
-</div>
+        <div>
+            <svg class="agua" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7"/>
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5"/>
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3"/>
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff"/>
+                </g>
+            </svg>
+        </div>
+    </div>
 
-<div class="separador"></div>
+    <div id="gallery1">
+        <section>
+            <h2>CREA EXPERIENCIAS</h2>
+            <div class="content-all">
+                <div class="content-carrousel">
+                    <figure><img src="ejemploprocedimiento.jpg" alt="Image 1"></figure>
+                    <figure><img src="Pasaporte.png" alt="Image 2"></figure>
+                    <figure><img src="tramites.jpg" alt="Image 3"></figure>
+                    <figure><img src="DOCUMENTACION.jpg" alt="Image 4"></figure>
+                    <figure><img src="DOCUMENTO.jpg" alt="Image 5"></figure>
+                    <figure><img src="tramites.jpg" alt="Image 6"></figure>
+                    <figure><img src="identificacion-mexico.webp" alt="Image 7"></figure>
+                    <figure><img src="Pasaporte.png" alt="Image 8"></figure>
+                    <figure><img src="ejemploprocedimiento.jpg" alt="Image 9"></figure>
+                </div>
+            </div>
+        </section>
+    </div>
 
+    <div class="separador"></div>
 </body>
 </html>
