@@ -90,12 +90,14 @@
         .content-all {
             overflow: hidden;
             width: 100%;
+            position: relative; /* Required for absolute positioning of images */
         }
 
         .content-carrousel {
             display: flex;
-            width: auto; /* IMPORTANT: Let content determine width */
-            animation: slideshow 20s linear infinite;
+            width: 100%; /* Images will wrap within the container */
+            animation: rotateCarousel 20s linear infinite; /* Rotate the carousel */
+            transform-style: preserve-3d; /* Enable 3D transforms */
         }
 
         .content-carrousel:hover {
@@ -103,9 +105,10 @@
         }
 
         .content-carrousel figure {
-            width: 50%;
-            margin: 5px;
+            width: 30%; /* Adjust as needed for spacing */
+            margin: 1%; /* Adjust as needed for spacing */
             box-sizing: border-box;
+            backface-visibility: hidden; /* Hide back faces */
         }
 
         .content-carrousel figure img {
@@ -114,13 +117,13 @@
             object-fit: cover;
         }
 
-        @keyframes slideshow {
+        @keyframes rotateCarousel {
             0% {
-                transform: translateX(0%);
+                transform: rotateY(0deg);
             }
 
             100% {
-                transform: translateX(-100%); /* IMPORTANT: Move entire content */
+                transform: rotateY(360deg); /* Rotate 360 degrees for a full loop */
             }
         }
 
@@ -144,7 +147,7 @@
             }
 
             .content-carrousel figure {
-                width: 50%;
+                width: 45%; /* Smaller screens can fit fewer images */
             }
         }
 
@@ -162,7 +165,8 @@
             }
 
             .content-carrousel figure {
-                width: 100%;
+                width: 90%; /* Stack images one by one on phones */
+                margin: 2%;
             }
         }
     </style>
