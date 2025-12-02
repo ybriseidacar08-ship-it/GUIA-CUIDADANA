@@ -1,0 +1,86 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fce4ec; /* Rosa pastel */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff8e1; /* Amarillo pálido */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 500px;
+    text-align: center;
+}
+
+h1 {
+    color: #e91e63; /* Rosa fuerte */
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+p {
+    color: #757575;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e91e63; /* Rosa fuerte */
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffcdd2; /* Rosa claro */
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    background-color: #e91e63; /* Rosa fuerte */
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d81b60; /* Rosa más oscuro */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    border-color: #e91e63; /* Rosa fuerte */
+    outline: none;
+    box-shadow: 0 0 8px rgba(233, 30, 99, 0.2);
+}
