@@ -6,16 +6,98 @@
     <meta name="keywords" content="ciudadano, derechos, responsabilidades">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GUÍA CIUDADANA</title>
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="preconnect" href="">
-    <link rel="preconnect" href="" crossorigin>
-    <link href="/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos para el video responsivo */
+        /* Estilos generales */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: #444;
+            color: white;
+            padding: 0.5em 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 1em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .columna {
+            flex: 1;
+            margin: 10px;
+            padding: 15px;
+            background-color: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            min-width: 300px;
+        }
+
+        .imagen-ciudadano {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
         .video-container {
             position: relative;
-            width: 100%; /* O el ancho que desees para el contenedor */
-            padding-bottom: 56.25%; /* Proporción 16:9 (ajusta según tu video) */
+            width: 100%;
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
         }
@@ -28,31 +110,64 @@
             height: 100%;
         }
 
-        /* Estilos CSS responsivos añadidos */
+        /* Media Queries para diseño responsivo */
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+
+            header {
+                padding: 0.5em 0;
+            }
+
+            .logo {
+                width: 80px;
+            }
+
+            nav ul {
+                text-align: center;
+            }
+
+            nav li {
+                display: block;
+                margin: 0.5em 0;
+            }
+
+            .contenedor {
+                flex-direction: column;
+            }
+
+            .columna {
+                min-width: auto;
+                margin: 10px 0;
+            }
+
+            main {
+                padding: 10px;
+            }
+        }
+
         @media (max-width: 600px) {
-          body {
-            padding: 10px;
-          }
-          main {
-            padding: 10px;
-          }
-          h1, h2 {
-            font-size: 1.2em;
-            text-align: center;
-          }
-          iframe {
-            width: 100%;
-            height: 200px;
-          }
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            .video-container {
+                padding-bottom: 75%;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1 id="titulo-ciudadano">GUÍA CIUDADANA</h1>
-        <img src="yuri3.jpg" alt="Logo de Ciudadano" class="logo">
+        <img src="yuri3.jpg" alt="Logotipo de la guía ciudadana" class="logo">
     </header>
-    <nav>
+    <nav aria-label="Menú de navegación principal">
         <ul>
             <li><a href="#concepto">Concepto de Ciudadano</a></li>
             <li><a href="#derechos">Derechos y Responsabilidades</a></li>
@@ -62,36 +177,43 @@
     </nav>
     <main class="contenedor">
         <section id="concepto" class="columna">
-            <h2>¿Qué es un Ciudadano?</h2>
-            <p>Un ciudadano es una persona que tiene la nacionalidad de un país y, por lo tanto, tiene derechos y responsabilidades dentro de ese país. La ciudadanía implica una relación entre el individuo y el Estado, donde el ciudadano tiene ciertos derechos y deberes. Los ciudadanos participan en la vida cívica, política y social de su comunidad.</p>
-            <img src="1.png" alt="Imagen de Ciudadano" class="imagen-ciudadano">
+            <article>
+                <h2>¿Qué es un Ciudadano?</h2>
+                <p>Un ciudadano es una persona que tiene la nacionalidad de un país y, por lo tanto, tiene derechos y responsabilidades dentro de ese país. La ciudadanía implica una relación entre el individuo y el Estado, donde el ciudadano tiene ciertos derechos y deberes. Los ciudadanos participan en la vida cívica, política y social de su comunidad.</p>
+                <img src="1.png" alt="Imagen representativa de un ciudadano" class="imagen-ciudadano">
+            </article>
         </section>
         <section id="derechos" class="columna">
-            <h2>Derechos y Responsabilidades de los Ciudadanos</h2>
-            <p><b>Derechos:</b> Los ciudadanos tienen derechos como la libertad de expresión, la libertad de reunión, el derecho a votar y el acceso a servicios públicos.</p>
-            <p><b>Responsabilidades:</b> Los ciudadanos tienen responsabilidades como cumplir con las leyes, pagar impuestos y participar en la vida cívica de su comunidad.</p>
-            <img src="2.jpg" alt="Imagen de Derechos" class="imagen-ciudadano">
+            <article>
+                <h2>Derechos y Responsabilidades de los Ciudadanos</h2>
+                <p><b>Derechos:</b> Los ciudadanos tienen derechos como la libertad de expresión, la libertad de reunión, el derecho a votar y el acceso a servicios públicos.</p>
+                <p><b>Responsabilidades:</b> Los ciudadanos tienen responsabilidades como cumplir con las leyes, pagar impuestos y participar en la vida cívica de su comunidad.</p>
+                <img src="2.jpg" alt="Imagen representativa de los derechos ciudadanos" class="imagen-ciudadano">
+            </article>
         </section>
         <section id="participacion" class="columna">
-            <h2>Ejemplos de Participación Ciudadana</h2>
-            <p>Votar en Elecciones: Los ciudadanos pueden votar para elegir a sus representantes en el gobierno.</p>
-            <p>Participar en Movimientos Sociales: Los ciudadanos pueden participar en movimientos sociales para promover cambios en su comunidad.</p>
-            <p>Servir en la Comunidad: Los ciudadanos pueden servir en la comunidad a través del voluntariado o la participación en organizaciones comunitarias.</p>
-            <img src="aa.jpg" alt="Imagen de Participación" class="imagen-ciudadano">
+            <article>
+                <h2>Ejemplos de Participación Ciudadana</h2>
+                <p>Votar en Elecciones: Los ciudadanos pueden votar para elegir a sus representantes en el gobierno.</p>
+                <p>Participar en Movimientos Sociales: Los ciudadanos pueden participar en movimientos sociales para promover cambios en su comunidad.</p>
+                <p>Servir en la Comunidad: Los ciudadanos pueden servir en la comunidad a través del voluntariado o la participación en organizaciones comunitarias.</p>
+                <img src="aa.jpg" alt="Imagen representativa de la participación ciudadana" class="imagen-ciudadano">
+            </article>
         </section>
         <section id="mexico" class="columna">
-            <h2>Ciudadanía en México</h2>
-            <p>En México, la ciudadanía se otorga a las personas que cumplen con ciertos requisitos establecidos en la Constitución Política de los Estados Unidos Mexicanos.</p>
-            <p>Los ciudadanos pueden contribuir a la sociedad a través del trabajo, la participación en organizaciones comunitarias o la ayuda a otros.</p>
-            <img src="yuri2.jpg" alt="Imagen de Ciudadanía en México" class="imagen-ciudadano">
+            <article>
+                <h2>Ciudadanía en México</h2>
+                <p>En México, la ciudadanía se otorga a las personas que cumplen con ciertos requisitos establecidos en la Constitución Política de los Estados Unidos Mexicanos.</p>
+                <p>Los ciudadanos pueden contribuir a la sociedad a través del trabajo, la participación en organizaciones comunitarias o la ayuda a otros.</p>
+                <img src="yuri2.jpg" alt="Imagen representativa de la ciudadanía en México" class="imagen-ciudadano">
+            </article>
         </section>
-        <center>
-            <div class="video-container">
-                <video controls>
-                    <source src="video.mp4" type="video/mp4">
-                </video>
-            </div>
-        </center>
+        <div class="video-container">
+            <video controls>
+                <source src="video.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
     </main>
     <footer>
         <p>© 2025 Guía Ciudadana</p>
