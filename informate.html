@@ -4,34 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trámites y Pagos - Guía Ciudadana</title>
-    <link rel="preconnect" href="">
-    <link rel="preconnect" href="" crossorigin>
-    <link href="/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Estilos generales */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #c8e6c9, #a5d6a7); /* Degradado verde suave */
+            background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
             color: #333;
             line-height: 1.7;
-            overflow-x: hidden; /* Evita la barra de desplazamiento horizontal */
+            overflow-x: hidden;
         }
+
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 50px auto;
-            background-color: rgba(255, 255, 255, 0.95); /* Blanco translúcido */
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 50px;
             border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-            backdrop-filter: blur(10px); /* Efecto de desenfoque */
+            backdrop-filter: blur(10px);
         }
+
         header {
             text-align: center;
             margin-bottom: 50px;
         }
+
         h1 {
             font-size: 3.2em;
             font-weight: 700;
@@ -39,11 +42,13 @@
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         p.header-description {
             font-size: 1.4em;
             color: #558b2f;
             font-weight: 500;
         }
+
         h2 {
             font-size: 2.4em;
             color: #388e3c;
@@ -53,6 +58,7 @@
             padding-bottom: 10px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
         }
+
         /* Estilos para trámites y pagos */
         .item {
             display: flex;
@@ -64,10 +70,12 @@
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             background-color: #fff;
         }
+
         .item:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
         }
+
         .item img {
             width: 40%;
             height: 300px;
@@ -75,24 +83,29 @@
             border-radius: 0;
             transition: transform 0.5s ease;
         }
+
         .item:hover img {
             transform: scale(1.05);
         }
+
         .item-content {
             padding: 40px;
             width: 60%;
         }
+
         .item-content h3 {
             margin: 0 0 20px;
             font-size: 2em;
             color: #1b5e20;
             font-weight: 600;
         }
+
         .item-content p {
             margin-bottom: 30px;
             color: #444;
             font-size: 1.1em;
         }
+
         .item-content a {
             display: inline-block;
             background-color: #4caf50;
@@ -104,10 +117,12 @@
             transition: background-color 0.4s ease, transform 0.4s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
+
         .item-content a:hover {
             background-color: #388e3c;
             transform: scale(1.05);
         }
+
         /* Estilos para información importante */
         .important-info {
             background-color: rgba(240, 249, 235, 0.8);
@@ -117,6 +132,7 @@
             border: 2px solid #a5d6a7;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
+
         .important-info h3 {
             color: #d32f2f;
             margin-top: 0;
@@ -124,27 +140,102 @@
             font-size: 1.8em;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
+
         .important-info p {
             color: #555;
             font-size: 1.1em;
         }
 
-        /* Estilos CSS responsivos añadidos */
+        /* Media Queries para diseño responsivo */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px auto;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p.header-description {
+                font-size: 1.2em;
+            }
+
+            h2 {
+                font-size: 2em;
+                margin-top: 40px;
+                margin-bottom: 20px;
+            }
+
+            .item {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .item img {
+                width: 100%;
+                height: auto;
+            }
+
+            .item-content {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .item-content h3 {
+                font-size: 1.6em;
+            }
+
+            .item-content p {
+                font-size: 1em;
+            }
+
+            .important-info {
+                padding: 20px;
+            }
+
+            .important-info h3 {
+                font-size: 1.5em;
+            }
+
+            .important-info p {
+                font-size: 1em;
+            }
+        }
+
         @media (max-width: 600px) {
-          body {
-            padding: 10px;
-          }
-          main {
-            padding: 10px;
-          }
-          h1, h2 {
-            font-size: 1.2em;
-            text-align: center;
-          }
-          iframe {
-            width: 100%;
-            height: 200px;
-          }
+            h1 {
+                font-size: 2em;
+            }
+
+            p.header-description {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.7em;
+            }
+
+            .item-content h3 {
+                font-size: 1.4em;
+            }
+
+            .item-content p {
+                font-size: 0.9em;
+            }
+
+            .item-content a {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+
+            .important-info h3 {
+                font-size: 1.3em;
+            }
+
+            .important-info p {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
@@ -159,37 +250,35 @@
             <img src="LL.jpg" alt="Licencia de Conducir">
             <div class="item-content">
                 <h3>Licencia de Conducir</h3>
-                <p>Para obtener o renovar una licencia de conducir en Valle de Bravo, el trámite se realiza a través del Gobierno del Estado de México. Los requisitos principales son: acta de nacimiento (o equivalente), CURP actualizada, identificación oficial con fotografía, y comprobante de domicilio con antigüedad no mayor a tres meses. El costo es de $1,500 pesos para la licencia permanente tipo A, y es necesario obtener una línea de captura pagada antes de asistir a la cita. Es recomendable agendar una cita previamente en el sitio web de la Secretaría de Movilidad del Estado de México. </p>
-                <a href="">Más información</a>
+                <p>Para obtener o renovar una licencia de conducir en Valle de Bravo, el trámite se realiza a través del Gobierno del Estado de México. Los requisitos principales son: acta de nacimiento (o equivalente), CURP actualizada, identificación oficial con fotografía, y comprobante de domicilio con antigüedad no mayor a tres meses. El costo es de $1,500 pesos para la licencia permanente tipo A, y es necesario obtener una línea de captura pagada antes de asistir a la cita. Es recomendable agendar una cita previamente en el sitio web de la Secretaría de Movilidad del Estado de México.</p>
+                <a href="#">Más información</a>
             </div>
         </div>
         <div class="item">
             <img src="ACTA23.jpg" alt="Acta de Nacimiento">
             <div class="item-content">
                 <h3>Acta de Nacimiento</h3>
-                <p>Para obtener un acta de nacimiento en Valle de Bravo, puedes tramitar una copia certificada en línea a través del portal oficial del gobierno de México o de forma presencial en la oficina del Registro Civil del Estado de México en Valle de Bravo. La opción en línea requiere la CURP o datos personales para descargar el documento, mientras que la opción presencial puede requerir la solicitud y pago de derechos. El costo es de $81.79 .</p>
-                <a href="">Más información</a>
+                <p>Para obtener un acta de nacimiento en Valle de Bravo, puedes tramitar una copia certificada en línea a través del portal oficial del gobierno de México o de forma presencial en la oficina del Registro Civil del Estado de México en Valle de Bravo. La opción en línea requiere la CURP o datos personales para descargar el documento, mientras que la opción presencial puede requerir la solicitud y pago de derechos. El costo es de $81.79.</p>
+                <a href="#">Más información</a>
             </div>
         </div>
-        <div class="item">
-            <img src="recibo.jpg" alt="Acta de Nacimiento">
+         <div class="item">
+            <img src="recibo.jpg" alt="Recibo de luz">
             <div class="item-content">
                 <h3>Recibo de luz</h3>
-                <p>Para obtener información de tu recibo de luz en Valle de Bravo, puedes consultar el portal en línea de la CFE o la aplicación móvil "CFE Contigo". También puedes llamar al teléfono nacional de atención de la CFE, que es el 071, o acudir a los centros de atención a clientes más cercanos. </p>
-                <a href="">Más información</a>
+                <p>Para obtener información de tu recibo de luz en Valle de Bravo, puedes consultar el portal en línea de la CFE o la aplicación móvil "CFE Contigo". También puedes llamar al teléfono nacional de atención de la CFE, que es el 071, o acudir a los centros de atención a clientes más cercanos.</p>
+                <a href="#">Más información</a>
             </div>
         </div>
         <div class="item">
-            <img src="CURPP.jpg" alt="Acta de Nacimiento">
+            <img src="CURPP.jpg" alt="CURP">
             <div class="item-content">
                 <h3>CURP</h3>
-                <p>Para información y trámites de CURP en Valle de Bravo, puedes asistir a las oficinas del Registro Civil más cercanas, ya que es ahí donde se realizan los registros iniciales. También puedes consultar y descargar tu CURP en línea en la página oficial del gobierno o, si necesitas assistance telefónica, llamar al Centro de Atención y Servicios de la CURP. </p>
-                <a href="">Más información</a>
+                <p>Para información y trámites de CURP en Valle de Bravo, puedes asistir a las oficinas del Registro Civil más cercanas, ya que es ahí donde se realizan los registros iniciales. También puedes consultar y descargar tu CURP en línea en la página oficial del gobierno o, si necesitas asistencia telefónica, llamar al Centro de Atención y Servicios de la CURP.</p>
+                <a href="#">Más información</a>
             </div>
         </div>
-        <CENTER>
-         <p>INFORMATE ACERCA DE TODOS LOS TRAMITES QUE NECESITAS EN TU  VIDA DIARIA Y ASEGURATE DE TENERLOS POR SI LOS NECESITAS MAS ADELANTE Y NO TENGAS PROBLEMAS MAS ADELANTE.</p>
-        </CENTE>
-</div>
+        <p style="text-align: center;">Infórmate acerca de todos los trámites que necesitas en tu vida diaria y asegúrate de tenerlos por si los necesitas más adelante para evitar problemas.</p>
+    </div>
 </body>
 </html>
