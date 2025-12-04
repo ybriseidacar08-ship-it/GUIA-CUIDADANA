@@ -1,192 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantel Valle de Bravo</title>
-    <link rel="stylesheet" href="principal.css">
-      <link rel="icon" href="img/unnamed-removebg-preview.png" type="png">
-    <a href="OPDAPAS.html"></a>
- 
-    <style>
-   
-        .fondo-valle{
-            background-image: linear-gradient(to top, #0593bb 20%, #0e26ae 80%);
-            background-size: cover;
-            background-position: center center;
-            width: 100%;
-            height: 80vh;
-            background-attachment: fixed;
-          }
-        .contenido-fondo-valle{
-            display: flex;
-            width: 100%;
-            height: 100%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-          }
-      @keyframes move_wave {
-          0% {
-              transform: translateX(0) translateZ(0) scaleY(1)
-          }
-          50% {
-              transform: translateX(-25%) translateZ(0) scaleY(0.55)
-          }
-          100% {
-              transform: translateX(-50%) translateZ(0) scaleY(1)
-          }
-      }
-      .waveWrapper {
-          overflow: hidden;
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          top: 0;
-          margin: auto;
-      }
-      .waveWrapperInner {
-          position: absolute;
-          width: 100%;
-          overflow: hidden;
-          height: 70%;
-    
-          
-      }
-      .bgTop {
-          z-index: 15;
-          opacity: 0.5;
-      }
-      .bgMiddle {
-          z-index: 10;
-          opacity: 0.75;
-      }
-      .bgBottom {
-          z-index: 5;
-      }
-      .wave {
-          position: absolute;
-          left: 0;
-          width: 200%;
-          height: 100%;
-          background-repeat: repeat no-repeat;
-          background-position: 0 bottom;
-          transform-origin: center bottom;
-      }
-      .waveTop {
-          background-size: 50% 100px;
-      }
-      .waveAnimation .waveTop {
-        animation: move-wave 3s;
-         -webkit-animation: move-wave 3s;
-         -webkit-animation-delay: 1s;
-         animation-delay: 1s;
-      }
-      .waveMiddle {
-          background-size: 50% 120px;
-      }
-      .waveAnimation .waveMiddle {
-          animation: move_wave 10s linear infinite;
-      }
-      .waveBottom {
-          background-size: 50% 100px;
-      }
-      .waveAnimation .waveBottom {
-          animation: move_wave 15s linear infinite;
-      }
-      </style>
-      
-      
-        <script>
-        window.console = window.console || function(t) {};
-      </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantel Valle de Bravo</title>
+<link rel="stylesheet" href="principal.css">
+<link rel="icon" href="valle.png" type="png">
+
+<style>
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333; /* Fondo gris oscuro */
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del encabezado (sin cambios significativos) */
+.header, .inner-header, .agua {
+    /* Mantén tus estilos actuales para el encabezado y la ola */
+}
+
+/* Estilo del título */
+h2 {
+    text-align: center;
+    font-size: 2em; /* Ajusta el tamaño según sea necesario */
+    color: #98ff98; /* Verde azulado claro */
+    text-shadow: 2px 2px 4px #000000; /* Sombra para resaltar */
+    margin: 20px 0;
+}
+
+/* Estilos para el diseño de panal */
+.content-all {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.content-carrousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.content-carrousel figure {
+    width: 200px; /* Ajusta el tamaño del hexágono */
+    height: 200px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 50%; /* Hace la imagen circular */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Forma de hexágono */
+}
+
+.content-carrousel figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para que la imagen cubra todo el hexágono */
+    transition: transform 0.3s ease;
+}
+
+.content-carrousel figure:hover img {
+    transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+}
+
+/* Estilos responsivos (ajusta según sea necesario) */
+@media (max-width: 768px) {
+    .content-carrousel figure {
+        width: 150px;
+        height: 150px;
+    }
+}
+</style>
 </head>
 <body>
-   
-        
-      
-    
-                <h2>TRAMITES CIUDADANOS ADMINISTRATIVOS BASICOS</h2>
-              
-<section class="gal"><br>
 
-    <main id="galeria" class="galeria">
-        <div class="galeria_item">
-            <a href="solicitudecurp.png" data-lightbox="models" data-title="imagen1">
-            <img src="solicitudecurp.png" alt="">
-        </a>
+<div class="header">
+    <div class="inner-header flex">
+        <div class="logo"></div>
+    </div>
+    <div>
+        <svg class="agua" ...>
+        </svg>
+    </div>
+</div>
+
+<div id="gallery1" class="gallery2">
+    <section>
+        <h2>TRÁMITES CIUDADANOS ADMINISTRATIVOS BÁSICOS</h2>
+        <div class="content-all">
+            <div class="content-carrousel">
+                <figure><img src="ejemploprocedimiento.jpg" alt="Trámite 1"></figure>
+                <figure><img src="Pasaporte.png" alt="Trámite 2"></figure>
+                <figure><img src="tramites.jpg" alt="Trámite 3"></figure>
+                <figure><img src="DOCUMENTACION.jpg" alt="Trámite 4"></figure>
+                <figure><img src="DOCUMENTO.jpg" alt="Trámite 5"></figure>
+                <figure><img src="tramites.jpg" alt="Trámite 6"></figure>
+                <figure><img src="identificacion-mexico.webp" alt="Trámite 7"></figure>
+                <figure><img src="Pasaporte.png" alt="Trámite 8"></figure>
+                <figure><img src="ejemploprocedimiento.jpg" alt="Trámite 9"></figure>
+            </div>
         </div>
+    </section>
+</div>
 
-    <div class="galeria_item">
-        <a href="CURP1.png" data-lightbox="models" data-title="imagen2">
-        <img src="CURP1.PNG" alt="">
-    </a>
-    </div>
+<div class="separador"></div>
 
-    <div class="galeria_item">
-        <a href="expedicion.png" data-lightbox="models" data-title="imagen3">
-        <img src="expedicion.png" alt="">
-    </a>
-    </div>
-
-    <div class="galeria_item">
-        <a href="tramitedepasaporte.png" data-lightbox="models" data-title="imagen4">
-        <img src="tramitedepasaporte.png" alt="">
-    </a>
-    </div>
-
-    <div class="galeria_item">
-         <a href="registro.png" data-lightbox="models" data-title="imagen5">
-        <img src="registro.png" alt="">
-    </a>
-    </div>
-
-    <div class="galeria_item">
-        <a href="licencia.png" data-lightbox="models" data-title="imagen6">
-        <img src="licencia.png" alt="">
-    </a>
-    </div>
-
-    <div class="galeria_item">
-        <a href="inscribe.png" data-lightbox="models" data-title="imagen7">
-        <img src="inscribe.png" alt="">
-    </a>
-    </div>
-
-    <div class="galeria_item">
-        <a href="tramiterfc.png" data-lightbox="models" data-title="imagen8">
-        <img src="tramiterfc.png" alt="">
-    </a>
-    </div>
-
-    <div class="galeria_item">
-        <a href="constancias.png" data-lightbox="models" data-title="imagen9">
-        <img src="constancias.png" alt="">
-    </a>
-    </div>
-
-        <div class="galeria_item">
-            <a href="solicitudactadenacimiento.png" data-lightbox="models" data-title="imagen10">
-            <img src="solicitudactadenacimiento.png" alt="">
-        </a>
-        </div>
-
-         <div class="galeria_item">
-        <a href="CURP1.png" data-lightbox="models" data-title="imagen2">
-        <img src="CURP1.PNG" alt="">
-    </a>
-    </div>
-
-    <div class="galeria_item">
-        <a href="inscribe.png" data-lightbox="models" data-title="imagen7">
-        <img src="inscribe.png" alt="">
-    </a>
-    </div>
-
-</main>
-        </section>
-
-      
 </body>
 </html>
